@@ -6,6 +6,10 @@ public class PersonMovementController : MonoBehaviour
 {
     public NavMeshAgent agent;
 
+    public float agentSpeed;
+    
+    public Person person;
+    
     public Vector2 groundDimention;
     
     private Vector3 _destination;
@@ -25,9 +29,12 @@ public class PersonMovementController : MonoBehaviour
             Move();
         }
     }
-
+    
     private void Move()
     {
+        // if the person is infected the speed will be updated
+        agent.speed = agentSpeed;
+        
         var z = groundDimention.y;
         var x = groundDimention.x;
         var y = transform.position.y;
