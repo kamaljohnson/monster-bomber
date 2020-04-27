@@ -27,6 +27,8 @@ public class Person : MonoBehaviour
     
     public void TriggerInfection()
     {
+        if(!gameObject.CompareTag(GetTag(PersonTags.Healthy))) return;
+        
         gameObject.tag = GetTag(PersonTags.Infected);
         
         gameObject.GetComponent<PersonMovementController>().TriggerChasingMode();
