@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Canon : MonoBehaviour
+public class Cannon : MonoBehaviour
 {
     public GameObject cannonBall;
 
@@ -8,8 +8,8 @@ public class Canon : MonoBehaviour
     
     private Rigidbody cannonballInstance;
 
-    public float bulletCount;
-    private float _bulletsLeft;
+    public int cannonBallCount;
+    private float _cannonBallsLeft;
     private bool _reloaded;
     public float reloadDelay;
     private float _reloadTimer;
@@ -20,7 +20,16 @@ public class Canon : MonoBehaviour
 
     private void Start()
     {
-        _bulletsLeft = bulletCount;
+        if (PlayerPrefs.HasKey("CannonBallCount"))
+        {
+            cannonBallCount = PlayerPrefs.GetInt("CannonBallCount");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("CannonBallCount", cannonBallCount);
+        }
+        
+        _cannonBallsLeft = cannonBallCount;
         _reloaded = true;
         _reloadTimer = 0;
     }
@@ -47,9 +56,9 @@ public class Canon : MonoBehaviour
             {
                 if (!hitInfo.transform.CompareTag("Ground")) return;
                 
-                if (_bulletsLeft > 0 && _reloaded)
+                if (_cannonBallsLeft > 0 && _reloaded)
                 {
-                    _bulletsLeft--;
+                    _cannonBallsLeft--;
                     _reloaded = false;
                     Debug.Log("fired");
                     FireCannonAtPoint(hitInfo.point);
@@ -58,7 +67,7 @@ public class Canon : MonoBehaviour
         }
         else
         {
-            if (_bulletsLeft > 0 && !_reloaded && _reloadTimer >= reloadDelay)
+            if (_cannonBallsLeft > 0 && !_reloaded && _reloadTimer >= reloadDelay)
             {
                 _reloadTimer = 0;
                 _reloaded = true;
@@ -100,5 +109,12 @@ public class Canon : MonoBehaviour
         // Calculate the velocity magnitude
         float velocity = Mathf.Sqrt(dist * Physics.gravity.magnitude / Mathf.Sin(2 * a));
         return velocity * dir.normalized; // Return a normalized vector.
+    }
+
+    public void AddExtraCannonBall(int count)
+    {
+        cannonBallCount += count;
+        _cannonBallsLeft += 1;
+        PlayerPrefs.SetInt("CannonBallCount", cannonBallCount);
     }
 }

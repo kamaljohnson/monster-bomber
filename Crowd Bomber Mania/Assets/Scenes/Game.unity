@@ -373,7 +373,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1688494037}
+      - m_Target: {fileID: 195626827}
         m_MethodName: ActivatePowerUp
         m_Mode: 1
         m_Arguments:
@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 382030ddae7017e48a19ef5976ea3588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
 --- !u!1 &234363939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,7 +1809,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1688494037}
+      - m_Target: {fileID: 1637370499}
         m_MethodName: ActivatePowerUp
         m_Mode: 1
         m_Arguments:
@@ -2274,9 +2274,9 @@ MonoBehaviour:
   cannonBall: {fileID: 6437247045988601619, guid: dc0fa0178471d394ea696b497381e653,
     type: 3}
   shootTransform: {fileID: 1891983222}
-  bulletCount: 5
+  cannonBallCount: 1
   reloadDelay: 0.5
-  angle: 37.3
+  angle: 45.3
 --- !u!1 &2103775315
 GameObject:
   m_ObjectHideFlags: 0

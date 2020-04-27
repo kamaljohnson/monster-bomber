@@ -21,6 +21,7 @@ public class PowerUp : MonoBehaviour
                 FindObjectOfType<PersonSpawner>().SpawnPerson(1);
                 break;
             case PowerUpType.ExtraCannon:
+                FindObjectOfType<Cannon>().AddExtraCannonBall(1);
                 break;
             case PowerUpType.SpeedIncrease:
                 break;
