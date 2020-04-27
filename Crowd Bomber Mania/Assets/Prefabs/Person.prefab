@@ -126,6 +126,7 @@ MonoBehaviour:
   - {fileID: 2888154953746705775}
   - {fileID: 2888154953746705771}
   - {fileID: 2888154953746705770}
+  personCash: 10
 --- !u!114 &2888154953746705773
 MonoBehaviour:
   m_ObjectHideFlags: 0

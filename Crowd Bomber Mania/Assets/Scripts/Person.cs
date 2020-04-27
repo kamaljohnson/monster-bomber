@@ -20,12 +20,16 @@ public class Person : MonoBehaviour
 
     public List<Object> listOfObjectsToBeCleanedAfterDeath;
 
+    public int personCash;
+
     public void TriggerInfection()
     {
         gameObject.tag = GetTag(PersonTags.Infected);
         
         gameObject.GetComponent<PersonMovementController>().TriggerChasingMode();
         gameObject.GetComponent<MeshRenderer>().material = infectedMaterial;
+
+        CashManager.AddCash(personCash);
 
         // this starts the death timer, after which the person dies due to the infection
         StartCoroutine(TriggerDeathTimer(infectionToDeathDuration));
