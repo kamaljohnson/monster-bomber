@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 public enum PersonTags
@@ -22,6 +23,8 @@ public class Person : MonoBehaviour
 
     public int personCash;
 
+    public InfectedDeathBar deathBar;
+    
     public void TriggerInfection()
     {
         gameObject.tag = GetTag(PersonTags.Infected);
@@ -32,6 +35,9 @@ public class Person : MonoBehaviour
         CashManager.AddCash(personCash);
 
         // this starts the death timer, after which the person dies due to the infection
+        deathBar.barLifeTime = infectionToDeathDuration;
+        deathBar.Start();
+        
         StartCoroutine(TriggerDeathTimer(infectionToDeathDuration));
     }
 
