@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Object = UnityEngine.Object;
 
-public enum PersonHealth
+public enum PersonTags
 {
     Healthy,
     Infected,
@@ -12,28 +12,19 @@ public enum PersonHealth
 
 public class Person : MonoBehaviour
 {
-    public PersonHealth personHealth;
-
-
     public float infectedPersonSpeed;
     // after the infection duration the peron will get killed
     public float infectionToDeathDuration;
-    
-    public Collider infectionCollider;
 
     public Material infectedMaterial;
     public Material deadMaterial;
 
     public List<Object> listOfObjectsToBeCleanedAfterDeath;
-    
+
     public void TriggerInfection()
     {
-        // do noting if the person is not healthy 
-        if (personHealth != PersonHealth.Healthy)
-            return;
-
-        personHealth = PersonHealth.Infected;
-        infectionCollider.enabled = true;
+        gameObject.tag = GetTag(PersonTags.Infected);
+        
         gameObject.GetComponent<PersonMovementController>().agent.speed = infectedPersonSpeed;
         gameObject.GetComponent<MeshRenderer>().material = infectedMaterial;
 
@@ -43,8 +34,7 @@ public class Person : MonoBehaviour
 
     public void TriggerDeath()
     {
-        infectionCollider.enabled = false;
-        personHealth = PersonHealth.Dead;
+        gameObject.tag = GetTag(PersonTags.Dead);
         gameObject.GetComponent<MeshRenderer>().material = deadMaterial;
         CleanupShit();
     }
@@ -52,12 +42,9 @@ public class Person : MonoBehaviour
 // the collider is enabled if the person is infected
     public void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Person")) return;
+        if (!other.CompareTag(GetTag(PersonTags.Infected))) return;
         
-        if (other.GetComponent<Person>().personHealth == PersonHealth.Infected)
-        {
-            TriggerInfection();
-        }
+        TriggerInfection();
     }
     
     IEnumerator TriggerDeathTimer(float time)
@@ -71,5 +58,38 @@ public class Person : MonoBehaviour
     private void CleanupShit()
     {
         listOfObjectsToBeCleanedAfterDeath.ForEach(Destroy);
+    }
+
+    public Person GetNearestHealthyPerson()
+    {
+        var closeDistance = 100f;
+        Person targetPerson = null;
+        var healthyPersons = GameObject.FindGameObjectsWithTag(GetTag(PersonTags.Healthy));
+ 
+        foreach (var healthyPerson in healthyPersons)
+        {
+            var distance = Vector3.Distance(transform.position, healthyPerson.transform.position);
+            if(distance <= closeDistance)
+            {
+                closeDistance = distance;
+                targetPerson = healthyPerson.GetComponent<Person>();
+            }
+        }
+        return targetPerson;
+    }
+
+    public static string GetTag(PersonTags personTags)
+    {
+        switch (personTags)
+        {
+            case PersonTags.Healthy:
+                return "Healthy Person";
+            case PersonTags.Infected:
+                return "Infected Person";
+            case PersonTags.Dead:
+                return "Dead Person";
+            default:
+                return "None";
+        }
     }
 }

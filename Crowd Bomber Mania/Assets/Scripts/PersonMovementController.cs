@@ -11,8 +11,11 @@ public class PersonMovementController : MonoBehaviour
     public Vector2 groundDimention;
     
     private Vector3 _destination;
-    private bool _destinationReached;
 
+    public Person targetPerson;
+
+    private bool _noHealthyPersonNearby = false;
+    
     // Start is called before the first frame update
     private void Start()
     {
@@ -23,9 +26,37 @@ public class PersonMovementController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (CompareTag(Person.GetTag(PersonTags.Infected)) && !_noHealthyPersonNearby)
+        {
+            MoveToNearestHealthyPerson();   
+            return;
+        }
+        
         if (CheckDestinationReached())
         {
             Move();
+        }
+    }
+
+    private void MoveToNearestHealthyPerson()
+    {
+        if (targetPerson == null)
+        {
+            targetPerson = gameObject.GetComponent<Person>().GetNearestHealthyPerson();
+        } 
+        else if (!targetPerson.CompareTag(Person.GetTag(PersonTags.Healthy)))
+        {
+            targetPerson = gameObject.GetComponent<Person>().GetNearestHealthyPerson();
+        }
+
+        if (targetPerson == null)
+        {
+            _noHealthyPersonNearby = true;
+        }
+        else
+        {
+            _destination = targetPerson.transform.position;
+            agent.SetDestination(_destination);
         }
     }
     
@@ -35,8 +66,6 @@ public class PersonMovementController : MonoBehaviour
         var x = groundDimention.x;
         var y = transform.position.y;
 
-        _destinationReached = false;
-        
         _destination = new Vector3(Random.Range(-x, x), y, Random.Range(-z, z));
         agent.SetDestination(_destination);
     }

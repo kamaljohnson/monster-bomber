@@ -12,7 +12,7 @@ public class CanonBall : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Person"))
+        if (other.CompareTag(Person.GetTag(PersonTags.Healthy)))
         {
             other.gameObject.GetComponent<Person>().TriggerInfection();
         }
