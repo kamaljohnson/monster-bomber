@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PersonSpawner : MonoBehaviour
 {
 
-    public int initSpawnCount;
+    public int initialPersonCount;
 
     public Vector2 groundDiamention;
 
@@ -12,10 +13,27 @@ public class PersonSpawner : MonoBehaviour
     
     private void Start()
     {
-        SpawnPerson(initSpawnCount);
+        if (PlayerPrefs.HasKey("InitialPersonCount"))
+        {
+            initialPersonCount = PlayerPrefs.GetInt("InitialPersonCount");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("InitialPersonCount", initialPersonCount);
+        }
+        
+        SpawnPersons(initialPersonCount);
     }
     
-    public void SpawnPerson(int count) {
+    public void SpawnExtraPersons(int count)
+    {
+        initialPersonCount += count;
+        PlayerPrefs.SetInt("InitialPersonCount", initialPersonCount);
+        SpawnPersons(count);
+    }
+
+    public void SpawnPersons(int count)
+    {
         for (var i = 0; i < count; i++)
         {
             var person = Instantiate(listOfPersons[Random.Range(0, listOfPersons.Count)]);
@@ -24,6 +42,6 @@ public class PersonSpawner : MonoBehaviour
             var y = transform.position.y;
 
             person.transform.position = new Vector3(Random.Range(-x, x), y, Random.Range(-z, z));
-        }
-    }
+        }        
+    }    
 }
