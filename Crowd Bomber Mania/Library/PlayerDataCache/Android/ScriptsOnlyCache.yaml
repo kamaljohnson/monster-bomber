@@ -1,13 +1,35 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - Canon
+    - BillBoardScript
+    - Cannon
     - CanonBall
+    - CashManager
+    - InfectedDeathBar
     - Person
     - PersonMovementController
+    - PersonSpawner
+    - PowerUp
+    Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.RiderScriptEditorData
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.Slider
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Game.unity:
     - Class: 1
@@ -28,6 +50,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
     - Class: 65
@@ -40,15 +64,55 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 109
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9668}
+    - Class: 114
+      Script: {instanceID: 9816}
+    - Class: 114
+      Script: {instanceID: 9856}
     - Class: 114
       Script: {instanceID: 9980}
     - Class: 114
       Script: {instanceID: 10022}
     - Class: 114
+      Script: {instanceID: 10226}
+    - Class: 114
       Script: {instanceID: 10246}
     - Class: 114
+      Script: {instanceID: 10248}
+    - Class: 114
       Script: {instanceID: 10334}
+    - Class: 114
+      Script: {instanceID: 10564}
+    - Class: 114
+      Script: {instanceID: 10772}
+    - Class: 114
+      Script: {instanceID: 10786}
+    - Class: 114
+      Script: {instanceID: 10944}
+    - Class: 114
+      Script: {instanceID: 11002}
+    - Class: 114
+      Script: {instanceID: 11148}
+    - Class: 114
+      Script: {instanceID: 11342}
+    - Class: 114
+      Script: {instanceID: 11374}
+    - Class: 114
+      Script: {instanceID: 144468}
+    - Class: 114
+      Script: {instanceID: 169514}
+    - Class: 114
+      Script: {instanceID: 180596}
+    - Class: 114
+      Script: {instanceID: 194272}
+    - Class: 114
+      Script: {instanceID: 200034}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 135
       Script: {instanceID: 0}
@@ -59,6 +123,14 @@ ScriptsOnlyBuild:
     - Class: 196
       Script: {instanceID: 0}
     - Class: 208
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 238
       Script: {instanceID: 0}
@@ -187,7 +259,7 @@ ScriptsOnlyBuild:
     className: CanonBall
   - hash:
       serializedVersion: 2
-      Hash: 18c561f8a9d88aaeba86efd92b67687f
+      Hash: 39cc0e542baaa772c637dab491575b00
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Person
@@ -247,10 +319,10 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 559e4f399122437c7567c243c6852ea9
+      Hash: 21da1118f2e042847011b8f37f1857a1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Canon
+    className: Cannon
   - hash:
       serializedVersion: 2
       Hash: b8a5e8091ab0b8861d2add371082c5e0
@@ -503,6 +575,36 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: b04522c35b7024394b3ef62864c4ca93
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PersonSpawner
+  - hash:
+      serializedVersion: 2
+      Hash: 284f5d9bdaed2e2fa4d300ea0adcd718
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PowerUp
+  - hash:
+      serializedVersion: 2
+      Hash: f15735a29b4c662e607998a7b575e958
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CashManager
+  - hash:
+      serializedVersion: 2
+      Hash: 729affdcd524752c20374e7731c716c3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InfectedDeathBar
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BillBoardScript
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
