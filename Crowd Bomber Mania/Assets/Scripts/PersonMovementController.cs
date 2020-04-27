@@ -6,20 +6,24 @@ public class PersonMovementController : MonoBehaviour
 {
     public NavMeshAgent agent;
 
-    public float agentSpeed;
+    public float agentWalkSpeed;
+    public float agentRunSpeed;
     
     public Vector2 groundDimention;
     
     private Vector3 _destination;
 
     public Person targetPerson;
+    public Person chasingPerson;
 
-    private bool _noHealthyPersonNearby = false;
-    
+    private bool _noHealthyPersonNearby;
+
+    public bool isChasedByInfectedPerson;
+
     // Start is called before the first frame update
     private void Start()
     {
-        agent.speed = agentSpeed;
+        agent.speed = agentWalkSpeed;
         _destination = transform.position;
     }
 
@@ -28,8 +32,13 @@ public class PersonMovementController : MonoBehaviour
     {
         if (CompareTag(Person.GetTag(PersonTags.Infected)) && !_noHealthyPersonNearby)
         {
-            MoveToNearestHealthyPerson();   
+            ChaseNearestHealtyPerson();
             return;
+        }
+
+        if (CompareTag(Person.GetTag(PersonTags.Healthy)) && isChasedByInfectedPerson)
+        {
+            MoveAwayFromInfectedPerson();
         }
         
         if (CheckDestinationReached())
@@ -38,7 +47,7 @@ public class PersonMovementController : MonoBehaviour
         }
     }
 
-    private void MoveToNearestHealthyPerson()
+    private void ChaseNearestHealtyPerson()
     {
         if (targetPerson == null)
         {
@@ -52,12 +61,24 @@ public class PersonMovementController : MonoBehaviour
         if (targetPerson == null)
         {
             _noHealthyPersonNearby = true;
+            TriggerNormalMode();
         }
         else
         {
             _destination = targetPerson.transform.position;
             agent.SetDestination(_destination);
+            TriggerChasingMode();
         }
+    }
+
+    private void MoveAwayFromInfectedPerson()
+    {
+        if (chasingPerson == null)
+        {
+            TriggerNormalMode();
+            return;
+        }
+        _destination = chasingPerson.transform.position * -1;
     }
     
     private void Move()
@@ -70,6 +91,25 @@ public class PersonMovementController : MonoBehaviour
         agent.SetDestination(_destination);
     }
 
+    public void TriggerChasingMode(Person chasingPerson)
+    {
+        isChasedByInfectedPerson = true;
+        this.chasingPerson = chasingPerson;
+        agent.speed = agentRunSpeed;
+    }
+
+    public void TriggerChasingMode()
+    {
+        agent.speed = agentRunSpeed;
+    }
+
+    
+    public void TriggerNormalMode()
+    {
+        isChasedByInfectedPerson = false;
+        agent.speed = agentWalkSpeed;
+    }
+    
     private bool CheckDestinationReached()
     {
         const float tolerance = 1f;

@@ -189,7 +189,7 @@ ScriptsOnlyBuild:
     className: CanonBall
   - hash:
       serializedVersion: 2
-      Hash: bdee4d60ee8defc129443e55527514b8
+      Hash: 18c561f8a9d88aaeba86efd92b67687f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Person
@@ -273,7 +273,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 84e6a7a055dd2c24a0b7625e9b85b65f
+      Hash: 6f49cb90e32fcec7aa9bb1d2451056a7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PersonMovementController

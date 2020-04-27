@@ -12,7 +12,6 @@ public enum PersonTags
 
 public class Person : MonoBehaviour
 {
-    public float infectedPersonSpeed;
     // after the infection duration the peron will get killed
     public float infectionToDeathDuration;
 
@@ -25,7 +24,7 @@ public class Person : MonoBehaviour
     {
         gameObject.tag = GetTag(PersonTags.Infected);
         
-        gameObject.GetComponent<PersonMovementController>().agent.speed = infectedPersonSpeed;
+        gameObject.GetComponent<PersonMovementController>().TriggerChasingMode();
         gameObject.GetComponent<MeshRenderer>().material = infectedMaterial;
 
         // this starts the death timer, after which the person dies due to the infection
@@ -74,6 +73,11 @@ public class Person : MonoBehaviour
                 closeDistance = distance;
                 targetPerson = healthyPerson.GetComponent<Person>();
             }
+        }
+
+        if (targetPerson != null)
+        {
+            targetPerson.GetComponent<PersonMovementController>().TriggerChasingMode(this);
         }
         return targetPerson;
     }
