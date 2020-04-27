@@ -34,7 +34,7 @@ public class Person : MonoBehaviour
 
         personHealth = PersonHealth.Infected;
         infectionCollider.enabled = true;
-        gameObject.GetComponent<PersonMovementController>().agentSpeed = infectedPersonSpeed;
+        gameObject.GetComponent<PersonMovementController>().agent.speed = infectedPersonSpeed;
         gameObject.GetComponent<MeshRenderer>().material = infectedMaterial;
 
         // this starts the death timer, after which the person dies due to the infection

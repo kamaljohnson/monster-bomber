@@ -8,8 +8,6 @@ public class PersonMovementController : MonoBehaviour
 
     public float agentSpeed;
     
-    public Person person;
-    
     public Vector2 groundDimention;
     
     private Vector3 _destination;
@@ -18,6 +16,7 @@ public class PersonMovementController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        agent.speed = agentSpeed;
         _destination = transform.position;
     }
 
@@ -32,9 +31,6 @@ public class PersonMovementController : MonoBehaviour
     
     private void Move()
     {
-        // if the person is infected the speed will be updated
-        agent.speed = agentSpeed;
-        
         var z = groundDimention.y;
         var x = groundDimention.x;
         var y = transform.position.y;
@@ -47,7 +43,7 @@ public class PersonMovementController : MonoBehaviour
 
     private bool CheckDestinationReached()
     {
-        const float tolerance = 0.5f;
-        return Mathf.Abs(Vector3.Distance(transform.position, _destination)) <= tolerance;
+        const float tolerance = 1f;
+        return agent.remainingDistance <= tolerance;
     }
 }

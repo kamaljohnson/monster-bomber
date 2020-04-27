@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Serialization;
+﻿using UnityEngine;
 
 public class Canon : MonoBehaviour
 {
@@ -11,20 +8,63 @@ public class Canon : MonoBehaviour
     
     private Rigidbody cannonballInstance;
 
+    public float bulletCount;
+    private float _bulletsLeft;
+    private bool _reloaded;
+    public float reloadDelay;
+    private float _reloadTimer;
+    
     [SerializeField]
     [Range(10f, 80f)]
     private float angle = 45f;
 
+    private void Start()
+    {
+        _bulletsLeft = bulletCount;
+        _reloaded = true;
+        _reloadTimer = 0;
+    }
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            
+            Vector3 pointerPosition;
+            if (Input.touchCount > 0)
+            {
+                pointerPosition = Input.GetTouch(0).position;
+            }
+            else
+            {
+                pointerPosition = Input.mousePosition;
+            }
+            
+            var ray = Camera.main.ScreenPointToRay(pointerPosition);
 
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo))
             {
-                FireCannonAtPoint(hitInfo.point);
+                if (_bulletsLeft > 0 && _reloaded)
+                {
+                    _bulletsLeft--;
+                    _reloaded = false;
+                    Debug.Log("fired");
+                    FireCannonAtPoint(hitInfo.point);
+                }
+            }
+        }
+        else
+        {
+            if (_bulletsLeft > 0 && !_reloaded && _reloadTimer >= reloadDelay)
+            {
+                _reloadTimer = 0;
+                _reloaded = true;
+            }
+
+            if (_reloadTimer < reloadDelay)
+            {
+                _reloadTimer += Time.deltaTime;
             }
         }
     }
@@ -40,7 +80,6 @@ public class Canon : MonoBehaviour
         cannonballInstance = cannonBallObject.GetComponent<Rigidbody>();
         
         var velocity = BallisticVelocity(point, angle);
-        Debug.Log("Firing at " + point + " velocity " + velocity);
         
         cannonballInstance.transform.position = shootTransform.position;
         cannonballInstance.velocity = velocity;
