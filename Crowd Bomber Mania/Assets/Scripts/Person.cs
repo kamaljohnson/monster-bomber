@@ -52,10 +52,11 @@ public class Person : MonoBehaviour
 // the collider is enabled if the person is infected
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Person") && personHealth == PersonHealth.Infected)
+        if (!other.CompareTag("Person")) return;
+        
+        if (other.GetComponent<Person>().personHealth == PersonHealth.Infected)
         {
-            Debug.Log("the infection is transmitted");
-            other.gameObject.GetComponent<Person>().TriggerInfection();
+            TriggerInfection();
         }
     }
     
