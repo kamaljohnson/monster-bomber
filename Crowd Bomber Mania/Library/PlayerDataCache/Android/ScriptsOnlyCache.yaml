@@ -5,8 +5,6 @@ ScriptsOnlyBuild:
     - CanonBall
     - Person
     - PersonMovementController
-    Unity.Rider.Editor.dll:
-    - Packages.Rider.Editor.RiderScriptEditorData
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData

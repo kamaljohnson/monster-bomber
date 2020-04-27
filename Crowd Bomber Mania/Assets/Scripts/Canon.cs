@@ -45,6 +45,8 @@ public class Canon : MonoBehaviour
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo))
             {
+                if (!hitInfo.transform.CompareTag("Ground")) return;
+                
                 if (_bulletsLeft > 0 && _reloaded)
                 {
                     _bulletsLeft--;
