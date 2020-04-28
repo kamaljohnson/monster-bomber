@@ -8,6 +8,7 @@ TagManager:
   - Infected Person
   - Dead Person
   - Ground
+  - CannonBall
   layers:
   - Default
   - TransparentFX

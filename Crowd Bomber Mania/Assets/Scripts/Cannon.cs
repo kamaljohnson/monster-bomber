@@ -140,6 +140,7 @@ public class Cannon : MonoBehaviour
 
     public static void Reset()
     {
+
         if (PlayerPrefs.HasKey("CannonBallCount"))
         {
             _cannon.cannonBallCount = PlayerPrefs.GetInt("CannonBallCount");

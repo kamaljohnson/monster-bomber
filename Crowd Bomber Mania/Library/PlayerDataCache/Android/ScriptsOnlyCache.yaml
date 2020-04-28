@@ -40,7 +40,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Slider
-    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Game.unity:
     - Class: 1
@@ -89,8 +88,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9730}
     - Class: 114
       Script: {instanceID: 9772}
-    - Class: 114
-      Script: {instanceID: 9842}
     - Class: 114
       Script: {instanceID: 9882}
     - Class: 114
@@ -360,7 +357,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 21da1118f2e042847011b8f37f1857a1
+      Hash: ce23c818060a850d642c684aaa54a2e9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Cannon

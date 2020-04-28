@@ -32,13 +32,14 @@ public class GameManager : MonoBehaviour
 
     public void GoToMenu()
     {
-        GameState = GameState.AtMenu;
-        _gameManager.ShowMenu();        
+        _gameManager.ShowMenu();
 
         Reset();
 
         _gameManager.gameOverUi.SetActive(false);
         _gameManager.gameWonUi.SetActive(false);
+        
+        GameState = GameState.AtMenu;
     }
     
     public static void StartGame()
@@ -73,9 +74,14 @@ public class GameManager : MonoBehaviour
 
     private void CheckGameEnding()
     {
+        if (Cannon.CannonBallsRemaining() != 0) return;
+        
+        var cannonBallsInAir = GameObject.FindGameObjectsWithTag("CannonBall");
+        if(cannonBallsInAir.Length != 0) return;
+        
         var remainingInfectedPersons = GameObject.FindGameObjectsWithTag(Person.GetTag(PersonTags.Infected));
         if (remainingInfectedPersons.Length != 0) return;
-        if (Cannon.CannonBallsRemaining() != 0) return;
+        
 
         if (GameProgressManager.GetCurrentProgressState() == GameProgressState.Complete)
         {
