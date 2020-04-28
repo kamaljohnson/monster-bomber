@@ -38,7 +38,7 @@ public class Cannon : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
         {
-            
+
             Vector3 pointerPosition;
             if (Input.touchCount > 0)
             {
@@ -55,6 +55,12 @@ public class Cannon : MonoBehaviour
             if (Physics.Raycast(ray, out hitInfo))
             {
                 if (!hitInfo.transform.CompareTag("Ground")) return;
+                
+                //if user is at the menu start the game
+                if (GameManager.GameState == GameState.AtMenu)
+                {
+                    GameManager.StartGame();
+                }
                 
                 if (_cannonBallsLeft > 0 && _reloaded)
                 {
