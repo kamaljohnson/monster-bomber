@@ -1,18 +1,24 @@
-﻿using UnityEngine;
+﻿using System.Globalization;
+using TMPro;
+using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
     public GameObject cannonBall;
 
+    public TMP_Text remainingCannonBallCountText;
+    
     public Transform shootTransform;
     
     private Rigidbody cannonballInstance;
 
     public int cannonBallCount;
-    private float _cannonBallsLeft;
+    private int _cannonBallsLeft;
     private bool _reloaded;
     public float reloadDelay;
     private float _reloadTimer;
+
+    private static Cannon _cannon;
     
     [SerializeField]
     [Range(10f, 80f)]
@@ -20,6 +26,8 @@ public class Cannon : MonoBehaviour
 
     private void Start()
     {
+        _cannon = this;
+        
         if (PlayerPrefs.HasKey("CannonBallCount"))
         {
             cannonBallCount = PlayerPrefs.GetInt("CannonBallCount");
@@ -36,6 +44,10 @@ public class Cannon : MonoBehaviour
 
     private void Update()
     {
+        if (!(GameManager.GameState == GameState.AtMenu || GameManager.GameState == GameState.Playing)) return;
+
+        remainingCannonBallCountText.text = _cannonBallsLeft.ToString();
+        
         if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
         {
 
@@ -54,19 +66,18 @@ public class Cannon : MonoBehaviour
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo))
             {
-                if (!hitInfo.transform.CompareTag("Ground")) return;
+                // 8 -> GameBoard Layer
+                if (hitInfo.transform.gameObject.layer != 8) return;
                 
                 //if user is at the menu start the game
                 if (GameManager.GameState == GameState.AtMenu)
                 {
+                    _cannonBallsLeft = cannonBallCount;
                     GameManager.StartGame();
                 }
                 
                 if (_cannonBallsLeft > 0 && _reloaded)
                 {
-                    _cannonBallsLeft--;
-                    _reloaded = false;
-                    Debug.Log("fired");
                     FireCannonAtPoint(hitInfo.point);
                 }
             }
@@ -88,6 +99,9 @@ public class Cannon : MonoBehaviour
 
     private void FireCannonAtPoint(Vector3 point)
     {
+        _cannonBallsLeft--;
+        _reloaded = false;
+        
         var rotation = transform.rotation;
         transform.LookAt(point);
         rotation.eulerAngles = new Vector3(rotation.x,transform.rotation.eulerAngles.y , rotation.z);
@@ -122,5 +136,25 @@ public class Cannon : MonoBehaviour
         cannonBallCount += count;
         _cannonBallsLeft += 1;
         PlayerPrefs.SetInt("CannonBallCount", cannonBallCount);
+    }
+
+    public static void Reset()
+    {
+        if (PlayerPrefs.HasKey("CannonBallCount"))
+        {
+            _cannon.cannonBallCount = PlayerPrefs.GetInt("CannonBallCount");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("CannonBallCount", _cannon.cannonBallCount);
+        }
+
+        _cannon._cannonBallsLeft = _cannon.cannonBallCount;
+
+    }
+
+    public static int CannonBallsRemaining()
+    {
+        return _cannon._cannonBallsLeft;
     }
 }

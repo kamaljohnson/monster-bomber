@@ -47,6 +47,7 @@ public class Person : MonoBehaviour
     {
         gameObject.tag = GetTag(PersonTags.Dead);
         gameObject.GetComponent<MeshRenderer>().material = deadMaterial;
+        GameManager.ReportPersonDead();
         CleanupShit();
     }
 

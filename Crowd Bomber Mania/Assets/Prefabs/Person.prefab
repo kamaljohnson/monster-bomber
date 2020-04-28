@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 2888154953746705773}
   - component: {fileID: 2888154953746705772}
   - component: {fileID: 2888154953746705775}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Person
   m_TagString: Healthy Person
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 7016747541935185734}
-  infectionPeriod: 0
+  barLifeTime: 0
 --- !u!1 &4470414734959519291
 GameObject:
   m_ObjectHideFlags: 0

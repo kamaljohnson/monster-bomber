@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour
         levelText.text = "Level " + _currentLevel;
     }
 
-    public static void IncrementLevel()
+    public void IncrementLevel()
     {
         _currentLevel ++;
         PlayerPrefs.SetInt("CurrentLevel", _currentLevel);

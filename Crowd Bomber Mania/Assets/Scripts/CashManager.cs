@@ -29,5 +29,6 @@ public class CashManager : MonoBehaviour
     {
         _cash += cash;
         PlayerPrefs.SetInt("PlayerCash", _cash);
+        GameProgressManager.UpdateProgress(cash);
     }
 }

@@ -18,7 +18,7 @@ public class PowerUp : MonoBehaviour
         switch (type)
         {
             case PowerUpType.PopulationGrowth:
-                FindObjectOfType<PersonSpawner>().SpawnExtraPersons(1);
+                PersonSpawner.SpawnExtraPersons(1);
                 break;
             case PowerUpType.ExtraCannon:
                 FindObjectOfType<Cannon>().AddExtraCannonBall(1);

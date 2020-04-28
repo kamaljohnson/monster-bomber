@@ -10,6 +10,11 @@ public class CanonBall : MonoBehaviour
         Destroy(gameObject, destructionDuration);
     }
 
+    private void OnDestroy()
+    {
+        GameManager.ReportCannonBallUsed();
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(Person.GetTag(PersonTags.Healthy)))
