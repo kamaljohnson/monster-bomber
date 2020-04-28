@@ -7,7 +7,10 @@ public class CanonBall : MonoBehaviour
 
     public void OnCollisionEnter(Collision other)
     {
-        Destroy(gameObject, destructionDuration);
+        if (other.collider.CompareTag("Ground"))
+        {
+            Destroy(gameObject, destructionDuration);
+        }
     }
 
     private void OnDestroy()

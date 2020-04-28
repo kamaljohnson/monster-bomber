@@ -1,6 +1,5 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class LevelManager : MonoBehaviour
 {
@@ -18,16 +17,18 @@ public class LevelManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("CurrentLevel", _currentLevel);
         }
+        UpdateUi();
     }
-
-    private void Update()
-    {
-        levelText.text = "Level " + _currentLevel;
-    }
-
+    
     public void IncrementLevel()
     {
         _currentLevel ++;
         PlayerPrefs.SetInt("CurrentLevel", _currentLevel);
+        UpdateUi();
+    }
+
+    private void UpdateUi()
+    {
+        levelText.text = "Level " + _currentLevel;
     }
 }

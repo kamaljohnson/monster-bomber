@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices.WindowsRuntime;
+﻿using System.Collections;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public enum GameState
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public static GameState GameState;
 
+    public static bool CanPlay;
+    
     private static GameManager _gameManager;
     
     public GameObject bottomPowerUpUi;
@@ -40,6 +43,7 @@ public class GameManager : MonoBehaviour
         _gameManager.gameWonUi.SetActive(false);
         
         GameState = GameState.AtMenu;
+        StartCoroutine(TriggerCanPlay());
     }
     
     public static void StartGame()
@@ -52,14 +56,14 @@ public class GameManager : MonoBehaviour
     {
         GameState = GameState.GameOver;
         _gameManager.gameOverUi.SetActive(true);
-        _gameManager.ShowMenu();
+        CanPlay = false;
     }
 
     public static void GameWon()
     {
         GameState = GameState.GameWon;
         _gameManager.gameWonUi.SetActive(true);
-        _gameManager.ShowMenu();
+        CanPlay = false;
     }
 
     public static void ReportPersonDead()
@@ -104,6 +108,12 @@ public class GameManager : MonoBehaviour
         bottomPowerUpUi.GetComponent<Animator>().Play("BottomPowerUpAnimateOut", -1, 0);
     }
 
+    IEnumerator TriggerCanPlay()
+    {
+        yield return new WaitForSeconds(1f);
+        CanPlay = true;
+    }
+    
     private void Reset()
     {
         Cannon.Reset();

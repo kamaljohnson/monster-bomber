@@ -2010,7 +2010,7 @@ Light:
     m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.576
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -4327,7 +4327,7 @@ MonoBehaviour:
   remainingCannonBallCountText: {fileID: 1783262144}
   shootTransform: {fileID: 1891983222}
   cannonBallCount: 1
-  reloadDelay: 0.5
+  reloadDelay: 1
   angle: 60
 --- !u!1 &2082841860
 GameObject:

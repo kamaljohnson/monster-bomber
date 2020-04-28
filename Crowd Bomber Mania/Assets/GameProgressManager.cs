@@ -24,11 +24,6 @@ public class GameProgressManager : MonoBehaviour
     {
         _gameProgressManager = this;
     }
-    
-    public void Update()
-    {
-        progressSlider.value = gameProgress;
-    }
 
     public static void UpdateProgress(int cash)
     {
@@ -41,6 +36,9 @@ public class GameProgressManager : MonoBehaviour
         {
             _progressState = GameProgressState.NotComplete;
         }
+
+        _gameProgressManager.UpdateUi();
+
     }
 
     public static GameProgressState GetCurrentProgressState()
@@ -52,6 +50,12 @@ public class GameProgressManager : MonoBehaviour
     {
         _gameProgressManager.gameProgress = 0;
         _progressState = GameProgressState.NotComplete;
+        _gameProgressManager.UpdateUi();
+    }
+
+    private void UpdateUi()
+    {
+        progressSlider.value = gameProgress;
     }
     
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class CashManager : MonoBehaviour
@@ -7,9 +6,12 @@ public class CashManager : MonoBehaviour
     public TMP_Text cashText;
 
     private static int _cash;
-    
+
+    private static CashManager _cashManager;
+
     private void Start()
     {
+        _cashManager = this;
         if (PlayerPrefs.HasKey("PlayerCash"))
         {
             _cash = PlayerPrefs.GetInt("PlayerCash");
@@ -18,11 +20,7 @@ public class CashManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("PlayerCash", _cash);
         }
-    }
-
-    private void Update()
-    {
-        cashText.text = _cash + " $";
+        _cashManager.UpdateUi();
     }
 
     public static void AddCash(int cash)
@@ -30,5 +28,11 @@ public class CashManager : MonoBehaviour
         _cash += cash;
         PlayerPrefs.SetInt("PlayerCash", _cash);
         GameProgressManager.UpdateProgress(cash);
+        _cashManager.UpdateUi();
+    }
+
+    private void UpdateUi()
+    {
+        cashText.text = _cash + " $";
     }
 }

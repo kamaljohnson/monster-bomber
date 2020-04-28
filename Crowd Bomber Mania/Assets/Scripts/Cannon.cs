@@ -1,6 +1,8 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Cannon : MonoBehaviour
 {
@@ -24,9 +26,12 @@ public class Cannon : MonoBehaviour
     [Range(10f, 80f)]
     private float angle = 45f;
 
+    private bool _touched;
+    
     private void Start()
     {
         _cannon = this;
+        _touched = false;
         
         if (PlayerPrefs.HasKey("CannonBallCount"))
         {
@@ -44,16 +49,16 @@ public class Cannon : MonoBehaviour
 
     private void Update()
     {
-        if (!(GameManager.GameState == GameState.AtMenu || GameManager.GameState == GameState.Playing)) return;
-
         remainingCannonBallCountText.text = _cannonBallsLeft.ToString();
         
         if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
         {
-
+            if (!GameManager.CanPlay) return;
+            
             Vector3 pointerPosition;
-            if (Input.touchCount > 0)
+            if (Input.touchCount > 0 && _touched == false)
             {
+                _touched = true;
                 pointerPosition = Input.GetTouch(0).position;
             }
             else
@@ -84,6 +89,7 @@ public class Cannon : MonoBehaviour
         }
         else
         {
+            _touched = false;
             if (_cannonBallsLeft > 0 && !_reloaded && _reloadTimer >= reloadDelay)
             {
                 _reloadTimer = 0;
@@ -157,5 +163,13 @@ public class Cannon : MonoBehaviour
     public static int CannonBallsRemaining()
     {
         return _cannon._cannonBallsLeft;
+    }
+    
+    private bool IsPointerOverUIObject() {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        var results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
     }
 }
