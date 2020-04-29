@@ -121,5 +121,6 @@ public class GameManager : MonoBehaviour
         Cannon.Reset();
         PersonSpawner.Reset();
         GameProgressManager.Reset();
+        PowerUp.Reset();
     }
 }

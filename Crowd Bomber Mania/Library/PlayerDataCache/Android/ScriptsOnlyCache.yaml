@@ -295,7 +295,7 @@ ScriptsOnlyBuild:
     className: CanonBall
   - hash:
       serializedVersion: 2
-      Hash: b8696c9c5573b997ac661cb3876bb76e
+      Hash: 3d07d1bf606b56679966cd2eaf52b55e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Person

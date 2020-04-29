@@ -139,9 +139,13 @@ public class PowerUp : MonoBehaviour
         }
     }
 
-    private void ResetAdCounter()
+    public static void Reset()
     {
-        _adCounter = 0;
+        foreach (var powerUp in FindObjectsOfType<PowerUp>())
+        {
+            powerUp._adSupport = false;
+            powerUp.UpdateUi();
+        }
     }
 }
 
