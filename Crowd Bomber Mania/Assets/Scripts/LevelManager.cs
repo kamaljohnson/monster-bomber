@@ -5,30 +5,32 @@ public class LevelManager : MonoBehaviour
 {
     public TMP_Text levelText;
 
-    private static int _currentLevel;
+    public static int currentLevel = 1;
     
     private void Start()
     {
         if (PlayerPrefs.HasKey("CurrentLevel"))
         {
-            _currentLevel = PlayerPrefs.GetInt("CurrentLevel");
+            currentLevel = PlayerPrefs.GetInt("CurrentLevel");
         }
         else
         {
-            PlayerPrefs.SetInt("CurrentLevel", _currentLevel);
+            PlayerPrefs.SetInt("CurrentLevel", currentLevel);
         }
         UpdateUi();
     }
     
     public void IncrementLevel()
     {
-        _currentLevel ++;
-        PlayerPrefs.SetInt("CurrentLevel", _currentLevel);
+        currentLevel ++;
+        PlayerPrefs.SetInt("CurrentLevel", currentLevel);
+        GameProgressManager.UpdateProgressPerCash();
+        Person.UpdatePersonCash();
         UpdateUi();
     }
 
     private void UpdateUi()
     {
-        levelText.text = "Level " + _currentLevel;
+        levelText.text = "Level " + currentLevel;
     }
 }

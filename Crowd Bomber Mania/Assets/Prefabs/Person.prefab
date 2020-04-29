@@ -203,6 +203,7 @@ MonoBehaviour:
   - {fileID: 2888154953746705771}
   - {fileID: 2888154953746705770}
   personCash: 10
+  personCashMultiplier: 0.5
   deathBar: {fileID: 6027938237033331164}
 --- !u!114 &2888154953746705773
 MonoBehaviour:
@@ -218,7 +219,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2888154953746705771}
   agentWalkSpeed: 2
-  agentRunSpeed: 3
+  healthyAgentRunSpeed: 3
+  infectedAgentRunSpeed: 4
   groundDimention: {x: 25, y: 25}
   targetPerson: {fileID: 0}
   chasingPerson: {fileID: 0}

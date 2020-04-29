@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,9 +23,15 @@ public class Person : MonoBehaviour
     public List<Object> listOfObjectsToBeCleanedAfterDeath;
 
     public int personCash;
+    public float personCashMultiplier;
 
     public InfectedDeathBar deathBar;
-    
+
+    private void Start()
+    {
+        GetPersonCash();
+    }
+
     public void TriggerInfection()
     {
         if(!gameObject.CompareTag(GetTag(PersonTags.Healthy))) return;
@@ -34,7 +41,7 @@ public class Person : MonoBehaviour
         gameObject.GetComponent<PersonMovementController>().TriggerChasingMode();
         gameObject.GetComponent<MeshRenderer>().material = infectedMaterial;
 
-        CashManager.AddCash(personCash);
+        CashManager.AddOrRemoveCash(personCash);
 
         // this starts the death timer, after which the person dies due to the infection
         deathBar.barLifeTime = infectionToDeathDuration;
@@ -108,5 +115,24 @@ public class Person : MonoBehaviour
             default:
                 return "None";
         }
+    }
+
+    private void GetPersonCash()
+    {
+        if (PlayerPrefs.HasKey("PersonCash"))
+        {
+            personCash = PlayerPrefs.GetInt("PlayerCash");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("PersonCash", personCash);
+        }
+    }
+
+    public static void UpdatePersonCash()
+    {
+        var currentPersonCash = PlayerPrefs.GetInt("PersonCash");
+        currentPersonCash = (int) (currentPersonCash * 0.5f);
+        PlayerPrefs.SetInt("PersonCash", currentPersonCash);
     }
 }

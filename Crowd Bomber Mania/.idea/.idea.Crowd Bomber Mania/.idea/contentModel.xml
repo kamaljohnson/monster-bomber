@@ -6,18 +6,6 @@
     <e p="D:\games\crowd-bomber-mania\Crowd Bomber Mania" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="GameProgressManager.cs" t="Include" />
-        <e p="Hovl Studio" t="Include">
-          <e p="Procedural fire" t="Include">
-            <e p="Demo scene" t="Include">
-              <e p="Readme.txt" t="Include" />
-            </e>
-            <e p="Shaders" t="Include">
-              <e p="FireSphere.shader" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="LevelManager.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="BillBoardScript.cs" t="Include" />
           <e p="Cannon.cs" t="Include" />

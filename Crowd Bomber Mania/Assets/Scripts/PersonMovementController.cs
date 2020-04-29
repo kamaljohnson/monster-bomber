@@ -7,7 +7,8 @@ public class PersonMovementController : MonoBehaviour
     public NavMeshAgent agent;
 
     public float agentWalkSpeed;
-    public float agentRunSpeed;
+    public float healthyAgentRunSpeed;
+    public float infectedAgentRunSpeed;
     
     public Vector2 groundDimention;
     
@@ -91,16 +92,18 @@ public class PersonMovementController : MonoBehaviour
         agent.SetDestination(_destination);
     }
 
+    // Healthy Person
     public void TriggerChasingMode(Person chasingPerson)
     {
         isChasedByInfectedPerson = true;
         this.chasingPerson = chasingPerson;
-        agent.speed = agentRunSpeed;
+        agent.speed = healthyAgentRunSpeed;
     }
 
+    // Infected Person
     public void TriggerChasingMode()
     {
-        agent.speed = agentRunSpeed;
+        agent.speed = infectedAgentRunSpeed;
     }
 
     

@@ -13,8 +13,6 @@ ScriptsOnlyBuild:
     - PersonMovementController
     - PersonSpawner
     - PowerUp
-    Unity.Rider.Editor.dll:
-    - Packages.Rider.Editor.RiderScriptEditorData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -24,14 +22,11 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -97,39 +92,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10050}
     - Class: 114
-      Script: {instanceID: 10254}
+      Script: {instanceID: 10072}
     - Class: 114
-      Script: {instanceID: 10274}
+      Script: {instanceID: 10152}
     - Class: 114
-      Script: {instanceID: 10276}
+      Script: {instanceID: 10208}
+    - Class: 114
+      Script: {instanceID: 10260}
+    - Class: 114
+      Script: {instanceID: 10280}
     - Class: 114
       Script: {instanceID: 10282}
     - Class: 114
-      Script: {instanceID: 10364}
+      Script: {instanceID: 10288}
     - Class: 114
-      Script: {instanceID: 10594}
+      Script: {instanceID: 10370}
     - Class: 114
-      Script: {instanceID: 10802}
+      Script: {instanceID: 10600}
     - Class: 114
-      Script: {instanceID: 10816}
+      Script: {instanceID: 10808}
     - Class: 114
-      Script: {instanceID: 10974}
+      Script: {instanceID: 10822}
     - Class: 114
-      Script: {instanceID: 11032}
+      Script: {instanceID: 10980}
     - Class: 114
-      Script: {instanceID: 11178}
+      Script: {instanceID: 11038}
     - Class: 114
-      Script: {instanceID: 11198}
+      Script: {instanceID: 11184}
     - Class: 114
-      Script: {instanceID: 11374}
+      Script: {instanceID: 11204}
     - Class: 114
-      Script: {instanceID: 11406}
+      Script: {instanceID: 11380}
     - Class: 114
-      Script: {instanceID: 12750}
-    - Class: 114
-      Script: {instanceID: 15352}
-    - Class: 114
-      Script: {instanceID: 15978}
+      Script: {instanceID: 11412}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -315,6 +310,12 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
+      Hash: 6edd1719fe5668116d7b690aa0945106
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameProgressManager
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -333,6 +334,12 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: a9b22df0bb0a0d624934ebf785f0237a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelManager
+  - hash:
+      serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -343,6 +350,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: 1d5af7199f64036d6153e6f4ec47b964
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -531,7 +544,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 284f5d9bdaed2e2fa4d300ea0adcd718
+      Hash: 725165ce8dd6f323f1be8a053119930b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PowerUp
@@ -625,24 +638,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 1d5af7199f64036d6153e6f4ec47b964
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameManager
-  - hash:
-      serializedVersion: 2
-      Hash: a9b22df0bb0a0d624934ebf785f0237a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LevelManager
-  - hash:
-      serializedVersion: 2
-      Hash: 6edd1719fe5668116d7b690aa0945106
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameProgressManager
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
