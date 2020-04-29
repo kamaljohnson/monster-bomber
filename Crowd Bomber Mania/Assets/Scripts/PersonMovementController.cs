@@ -6,9 +6,9 @@ public class PersonMovementController : MonoBehaviour
 {
     public NavMeshAgent agent;
 
-    public float agentWalkSpeed;
-    public float healthyAgentRunSpeed;
-    public float infectedAgentRunSpeed;
+    private const float AgentWalkSpeed = 2f;
+    private const float HealthyAgentRunSpeed = 2.5f;
+    private static float _infectedAgentRunSpeed = 3f;
     
     public Vector2 groundDimention;
     
@@ -24,14 +24,16 @@ public class PersonMovementController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        agent.speed = agentWalkSpeed;
+        agent.speed = AgentWalkSpeed;
         _destination = transform.position;
+        
+        GetInfectedAgentSpeedFromPref();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (CompareTag(Person.GetTag(PersonTags.Infected)) && !_noHealthyPersonNearby)
+        if (CompareTag(Person.GetTag(PersonTags.Contagious)) && !_noHealthyPersonNearby)
         {
             ChaseNearestHealtyPerson();
             return;
@@ -97,25 +99,49 @@ public class PersonMovementController : MonoBehaviour
     {
         isChasedByInfectedPerson = true;
         this.chasingPerson = chasingPerson;
-        agent.speed = healthyAgentRunSpeed;
+        agent.speed = HealthyAgentRunSpeed;
     }
 
     // Infected Person
     public void TriggerChasingMode()
     {
-        agent.speed = infectedAgentRunSpeed;
+        agent.speed = _infectedAgentRunSpeed;
     }
 
     
     public void TriggerNormalMode()
     {
         isChasedByInfectedPerson = false;
-        agent.speed = agentWalkSpeed;
+        agent.speed = AgentWalkSpeed;
     }
     
     private bool CheckDestinationReached()
     {
         const float tolerance = 1f;
         return agent.remainingDistance <= tolerance;
+    }
+
+    public static void UpdatePersonSpeed()
+    {
+        // this ensures a less increase rate
+        _infectedAgentRunSpeed += 0.05f;
+        SetInfectedSpeedToPref();
+    }
+    
+    private static void SetInfectedSpeedToPref()
+    {
+        PlayerPrefs.SetFloat("InfectedAgentRunSpeed", _infectedAgentRunSpeed);
+    }
+    
+    private static void GetInfectedAgentSpeedFromPref()
+    {
+        if (PlayerPrefs.HasKey("InfectedAgentRunSpeed"))
+        {
+            _infectedAgentRunSpeed = PlayerPrefs.GetFloat("InfectedAgentRunSpeed");
+        }
+        else
+        {
+            SetInfectedSpeedToPref();
+        }
     }
 }

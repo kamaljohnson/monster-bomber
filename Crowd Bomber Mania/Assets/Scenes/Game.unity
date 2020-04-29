@@ -4153,7 +4153,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480257492}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -41.582684}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.034632035, y: 0.034632035, z: 0.034632035}
   m_Children:
   - {fileID: 54433649}
@@ -4241,7 +4241,7 @@ MonoBehaviour:
   progressSlider: {fileID: 1480257494}
   progressStepPerCash: 0.01
   gameProgress: 0
-  progressMultiplier: 0
+  progressMultiplier: 0.3
 --- !u!1 &1502287359
 GameObject:
   m_ObjectHideFlags: 0

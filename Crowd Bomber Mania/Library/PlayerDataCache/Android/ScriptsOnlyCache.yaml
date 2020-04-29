@@ -13,6 +13,8 @@ ScriptsOnlyBuild:
     - PersonMovementController
     - PersonSpawner
     - PowerUp
+    Unity.Rider.Editor.dll:
+    - Packages.Rider.Editor.RiderScriptEditorData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -27,6 +29,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -292,7 +295,7 @@ ScriptsOnlyBuild:
     className: CanonBall
   - hash:
       serializedVersion: 2
-      Hash: 39cc0e542baaa772c637dab491575b00
+      Hash: b8696c9c5573b997ac661cb3876bb76e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Person
@@ -310,7 +313,7 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
-      Hash: 6edd1719fe5668116d7b690aa0945106
+      Hash: c7f1bfbdaed06e994bb554e31898ca49
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameProgressManager
@@ -400,7 +403,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 6f49cb90e32fcec7aa9bb1d2451056a7
+      Hash: 5f70bb352ba26735c122052b7790cc08
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PersonMovementController

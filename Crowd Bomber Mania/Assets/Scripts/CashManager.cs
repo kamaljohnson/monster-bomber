@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CashManager : MonoBehaviour
 {
@@ -12,26 +13,39 @@ public class CashManager : MonoBehaviour
     private void Start()
     {
         _cashManager = this;
-        if (PlayerPrefs.HasKey("PlayerCash"))
-        {
-            _cash = PlayerPrefs.GetInt("PlayerCash");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("PlayerCash", _cash);
-        }
+        GetPlayerCashFromPref();
         _cashManager.UpdateUi();
     }
 
     // -ve cash will be deducted
     public static void AddOrRemoveCash(int cash)
     {
+        Debug.Log("cash added : " + cash);
         _cash += cash;
-        PlayerPrefs.SetInt("PlayerCash", _cash);
+        SetPlayerCashToPref();
         GameProgressManager.UpdateProgress(cash);
         _cashManager.UpdateUi();
     }
 
+    private static void GetPlayerCashFromPref()
+    {
+        if (PlayerPrefs.HasKey("PlayerCash"))
+        {
+            _cash = PlayerPrefs.GetInt("PlayerCash");
+        }
+        else
+        {
+            SetPlayerCashToPref();
+        }
+        
+        Debug.Log("cash: " + _cash);
+    }
+
+    private static void SetPlayerCashToPref()
+    {
+        PlayerPrefs.SetInt("PlayerCash", _cash);
+    }
+    
     public static bool MakePurchase(int cost)
     {
         var purchaseFlag = false;

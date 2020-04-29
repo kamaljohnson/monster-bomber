@@ -83,8 +83,10 @@ public class GameManager : MonoBehaviour
         var cannonBallsInAir = GameObject.FindGameObjectsWithTag("CannonBall");
         if(cannonBallsInAir.Length != 0) return;
         
-        var remainingInfectedPersons = GameObject.FindGameObjectsWithTag(Person.GetTag(PersonTags.Infected));
-        if (remainingInfectedPersons.Length != 0) return;
+        // counting all the infected and contagious persons
+        var remainingInfectedPersonsCount = GameObject.FindGameObjectsWithTag(Person.GetTag(PersonTags.Infected)).Length + 
+                                       GameObject.FindGameObjectsWithTag(Person.GetTag(PersonTags.Contagious)).Length;
+        if (remainingInfectedPersonsCount != 0) return;
         
 
         if (GameProgressManager.GetCurrentProgressState() == GameProgressState.Complete)

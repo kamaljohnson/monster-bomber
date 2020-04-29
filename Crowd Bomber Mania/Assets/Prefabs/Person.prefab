@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infectionToDeathDuration: 3
+  infectionActivationDuration: 0.5
   infectedMaterial: {fileID: 2100000, guid: 136785ebbdfe6344ca221a8998f78990, type: 2}
   deadMaterial: {fileID: 2100000, guid: 4468e1916d723d84696a3ff0d17b06db, type: 2}
   listOfObjectsToBeCleanedAfterDeath:
@@ -202,8 +203,6 @@ MonoBehaviour:
   - {fileID: 2888154953746705775}
   - {fileID: 2888154953746705771}
   - {fileID: 2888154953746705770}
-  personCash: 10
-  personCashMultiplier: 0.5
   deathBar: {fileID: 6027938237033331164}
 --- !u!114 &2888154953746705773
 MonoBehaviour:
@@ -218,9 +217,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 2888154953746705771}
-  agentWalkSpeed: 2
-  healthyAgentRunSpeed: 3
-  infectedAgentRunSpeed: 4
   groundDimention: {x: 25, y: 25}
   targetPerson: {fileID: 0}
   chasingPerson: {fileID: 0}

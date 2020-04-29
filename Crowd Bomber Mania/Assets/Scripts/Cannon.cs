@@ -33,14 +33,7 @@ public class Cannon : MonoBehaviour
         _cannon = this;
         _touched = false;
         
-        if (PlayerPrefs.HasKey("CannonBallCount"))
-        {
-            cannonBallCount = PlayerPrefs.GetInt("CannonBallCount");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("CannonBallCount", cannonBallCount);
-        }
+        GetCannonBallCountFromPref();
         
         _cannonBallsLeft = cannonBallCount;
         _reloaded = true;
@@ -146,16 +139,7 @@ public class Cannon : MonoBehaviour
 
     public static void Reset()
     {
-
-        if (PlayerPrefs.HasKey("CannonBallCount"))
-        {
-            _cannon.cannonBallCount = PlayerPrefs.GetInt("CannonBallCount");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("CannonBallCount", _cannon.cannonBallCount);
-        }
-
+        GetCannonBallCountFromPref();
         _cannon._cannonBallsLeft = _cannon.cannonBallCount;
 
     }
@@ -163,6 +147,23 @@ public class Cannon : MonoBehaviour
     public static int CannonBallsRemaining()
     {
         return _cannon._cannonBallsLeft;
+    }
+
+    private static void GetCannonBallCountFromPref()
+    {
+        if (PlayerPrefs.HasKey("CannonBallCount"))
+        {
+            _cannon.cannonBallCount = PlayerPrefs.GetInt("CannonBallCount");
+        }
+        else
+        {
+            SetCannonBallCountToPref();
+        }
+    }
+
+    private static void SetCannonBallCountToPref()
+    {
+        PlayerPrefs.SetInt("CannonBallCount", _cannon.cannonBallCount);
     }
     
     private bool IsPointerOverUIObject() {

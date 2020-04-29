@@ -9,6 +9,7 @@ TagManager:
   - Dead Person
   - Ground
   - CannonBall
+  - Contagious Person
   layers:
   - Default
   - TransparentFX

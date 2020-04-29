@@ -15,25 +15,35 @@ public class PersonSpawner : MonoBehaviour
     private void Start()
     {
         _spawner = this;
-        if (PlayerPrefs.HasKey("InitialPersonCount"))
-        {
-            initialPersonCount = PlayerPrefs.GetInt("InitialPersonCount");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("InitialPersonCount", initialPersonCount);
-        }
         
+        GetPersonSpawnCountFromPref();
         SpawnPersons(initialPersonCount);
     }
     
     public static void SpawnExtraPersons(int count)
     {
         _spawner.initialPersonCount += count;
-        PlayerPrefs.SetInt("InitialPersonCount", _spawner.initialPersonCount);
+        SetPersonSpawnCountToPref();
         SpawnPersons(count);
     }
 
+    private static void GetPersonSpawnCountFromPref()
+    {
+        if (PlayerPrefs.HasKey("InitialPersonCount"))
+        {
+            _spawner.initialPersonCount = PlayerPrefs.GetInt("InitialPersonCount");
+        }
+        else
+        {    
+            SetPersonSpawnCountToPref();
+        }
+    }
+
+    private static void SetPersonSpawnCountToPref()
+    {
+        
+    }
+    
     public static void SpawnPersons(int count)
     {
         for (var i = 0; i < count; i++)

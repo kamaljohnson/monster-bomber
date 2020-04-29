@@ -25,7 +25,7 @@ public class GameProgressManager : MonoBehaviour
     public void Start()
     {
         _gameProgressManager = this;
-        GetCurrentProgressState();
+        GetProgressPerCashFromPref();
     }
 
     public static void UpdateProgress(int cash)
@@ -44,7 +44,7 @@ public class GameProgressManager : MonoBehaviour
 
     }
 
-    private static void GetProgressPerCash()
+    private static void GetProgressPerCashFromPref()
     {
         if (PlayerPrefs.HasKey("ProgressPerCash"))
         {
@@ -52,14 +52,19 @@ public class GameProgressManager : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.SetFloat("ProgressPerCash", _gameProgressManager.progressStepPerCash);
+            SetProgressPerCashToPref();
         }
     }
 
+    private static void SetProgressPerCashToPref()
+    {
+        PlayerPrefs.SetFloat("ProgressPerCash", _gameProgressManager.progressStepPerCash);
+    }
+    
     public static void UpdateProgressPerCash()
     {
-        var currentLevel = LevelManager.currentLevel;
-        _gameProgressManager.progressStepPerCash *= currentLevel + _gameProgressManager.progressMultiplier;
+        _gameProgressManager.progressStepPerCash *= _gameProgressManager.progressMultiplier;
+        SetProgressPerCashToPref();
     }
     
     public static GameProgressState GetCurrentProgressState()

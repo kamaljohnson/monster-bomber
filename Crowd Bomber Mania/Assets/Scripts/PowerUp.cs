@@ -27,14 +27,13 @@ public class PowerUp : MonoBehaviour
     
     private void Start()
     {
-        powerUpCost = GetPriceOfPowerUp();
+        powerUpCost = GetPriceOfPowerUpFromPref();
         UpdateUi();
-        Debug.Log(GetName(type));
     }
 
     public void RequestPowerUpActivation()
     {
-        var priceOfPowerUp = GetPriceOfPowerUp();
+        var priceOfPowerUp = GetPriceOfPowerUpFromPref();
         bool purchaseStatus;
         
         purchaseStatus = priceOfPowerUp == 0 || CashManager.MakePurchase(priceOfPowerUp);
@@ -56,6 +55,7 @@ public class PowerUp : MonoBehaviour
                 FindObjectOfType<Cannon>().AddExtraCannonBall(1);
                 break;
             case PowerUpType.SpeedIncrease:
+                PersonMovementController.UpdatePersonSpeed();
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -64,17 +64,17 @@ public class PowerUp : MonoBehaviour
         UpdatePowerUpCost();
     }
 
-    private int GetPriceOfPowerUp()
+    private int GetPriceOfPowerUpFromPref()
     {
         if (!PlayerPrefs.HasKey(GetName(type) + "Cost"))
         {
-            SetPowerUpCost(powerUpInitialCosts[(int) type]);
+            SetPowerUpCostToPref(powerUpInitialCosts[(int) type]);
         }
         
         return PlayerPrefs.GetInt(GetName(type) + "Cost");
     }
 
-    private void SetPowerUpCost(int cost)
+    private void SetPowerUpCostToPref(int cost)
     {
         PlayerPrefs.SetInt(GetName(type) + "Cost", cost);
     }
@@ -82,7 +82,7 @@ public class PowerUp : MonoBehaviour
     private void UpdatePowerUpCost()
     {
         powerUpCost = (int)(powerUpCost * powerUpMultipliers[(int)type]);
-        SetPowerUpCost(powerUpCost);
+        SetPowerUpCostToPref(powerUpCost);
         UpdateUi();
     }
 

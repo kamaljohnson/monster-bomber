@@ -9,24 +9,36 @@ public class LevelManager : MonoBehaviour
     
     private void Start()
     {
-        if (PlayerPrefs.HasKey("CurrentLevel"))
-        {
-            currentLevel = PlayerPrefs.GetInt("CurrentLevel");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("CurrentLevel", currentLevel);
-        }
+        GetLevelFromPref();
+        
         UpdateUi();
     }
     
     public void IncrementLevel()
     {
         currentLevel ++;
-        PlayerPrefs.SetInt("CurrentLevel", currentLevel);
+        SetLevelToPref();
+        
         GameProgressManager.UpdateProgressPerCash();
         Person.UpdatePersonCash();
         UpdateUi();
+    }
+
+    public static void GetLevelFromPref()
+    {
+        if (PlayerPrefs.HasKey("CurrentLevel"))
+        {
+            currentLevel = PlayerPrefs.GetInt("CurrentLevel");
+        }
+        else
+        {
+            SetLevelToPref();
+        }
+    }
+
+    public static void SetLevelToPref()
+    {
+        PlayerPrefs.SetInt("CurrentLevel", currentLevel);
     }
 
     private void UpdateUi()
