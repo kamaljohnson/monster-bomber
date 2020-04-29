@@ -57,9 +57,9 @@ public class CashManager : MonoBehaviour
 
     public static string GetCashIn_kmb(int cash)
     {
-        if (cash > 1000000) return (cash / 10000).ToString("F") + "B";
-        if (cash > 100000) return (cash / 10000).ToString("F") + "M";
-        if (cash > 10000) return (cash / 1000).ToString("F") + "K";
+        if (cash > 1000000) return ((int) (cash / 10000)).ToString("F") + "B";
+        if (cash > 100000) return ((int)(cash / 10000)).ToString("F") + "M";
+        if (cash > 10000) return ((int)(cash / 1000)).ToString("F") + "K";
         return cash.ToString();
     }
 }
