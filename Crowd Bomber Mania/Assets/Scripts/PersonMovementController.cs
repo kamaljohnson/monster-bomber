@@ -33,7 +33,7 @@ public class PersonMovementController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (CompareTag(Person.GetTag(PersonTags.Contagious)) && !_noHealthyPersonNearby)
+        if (CompareTag(Person.GetTag(PersonTags.Infected)) && !_noHealthyPersonNearby)
         {
             ChaseNearestHealtyPerson();
             return;

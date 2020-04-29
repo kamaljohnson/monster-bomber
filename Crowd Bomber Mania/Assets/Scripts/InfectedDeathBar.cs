@@ -13,7 +13,7 @@ public class InfectedDeathBar : MonoBehaviour
 
     public void Start()
     {
-        gameObject.SetActive(true);
+        gameObject.transform.parent.gameObject.SetActive(true);
         _deathTimer = barLifeTime;
     }
 

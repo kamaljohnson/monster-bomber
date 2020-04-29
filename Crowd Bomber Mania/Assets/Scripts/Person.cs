@@ -9,7 +9,6 @@ public enum PersonTags
 {
     Healthy,
     Infected,
-    Contagious,
     Dead
 }
 
@@ -38,7 +37,7 @@ public class Person : MonoBehaviour
     {
         if(!gameObject.CompareTag(GetTag(PersonTags.Healthy))) return;
 
-        gameObject.tag = GetTag(PersonTags.Contagious);
+        gameObject.tag = GetTag(PersonTags.Infected);
         
         gameObject.GetComponent<PersonMovementController>().TriggerChasingMode();
         gameObject.GetComponent<MeshRenderer>().material = infectedMaterial;
@@ -61,20 +60,10 @@ public class Person : MonoBehaviour
     }
 
 // the collider is enabled if the person is infected
-    public void OnTriggerStay(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        var otherTag = other.tag;
-        if (otherTag != GetTag(PersonTags.Infected) && otherTag != GetTag(PersonTags.Contagious)) return;
+        if (!other.CompareTag(GetTag(PersonTags.Infected))) return;
         
-        StartCoroutine(TriggerInfectionTimer());
-    }
-    
-    IEnumerator TriggerInfectionTimer()
-    {
-        gameObject.tag = GetTag(PersonTags.Infected);
-        yield return new WaitForSeconds(infectionActivationDuration);
- 
-        // Code to execute after the delay
         TriggerInfection();
     }
     
@@ -122,8 +111,6 @@ public class Person : MonoBehaviour
                 return "Healthy Person";
             case PersonTags.Infected:
                 return "Infected Person";
-            case PersonTags.Contagious:
-                return "Contagious Person";
             case PersonTags.Dead:
                 return "Dead Person";
             default:
