@@ -9,6 +9,7 @@ public enum PersonTags
 {
     Healthy,
     Infected,
+    Contagious,
     Dead
 }
 
@@ -16,38 +17,39 @@ public class Person : MonoBehaviour
 {
     // after the infection duration the peron will get killed
     public float infectionToDeathDuration;
+    public float infectionActivationDuration;
 
     public Material infectedMaterial;
     public Material deadMaterial;
 
     public List<Object> listOfObjectsToBeCleanedAfterDeath;
 
-    public int personCash;
-    public float personCashMultiplier;
+    private static int _personCash = 10;
+    private const float PersonCashMultiplier = 0.5f;
 
     public InfectedDeathBar deathBar;
 
     private void Start()
     {
-        GetPersonCash();
+        GetPersonCashFromPref();
     }
 
     public void TriggerInfection()
     {
         if(!gameObject.CompareTag(GetTag(PersonTags.Healthy))) return;
-        
-        gameObject.tag = GetTag(PersonTags.Infected);
+
+        gameObject.tag = GetTag(PersonTags.Contagious);
         
         gameObject.GetComponent<PersonMovementController>().TriggerChasingMode();
         gameObject.GetComponent<MeshRenderer>().material = infectedMaterial;
 
-        CashManager.AddOrRemoveCash(personCash);
+        CashManager.AddOrRemoveCash(_personCash);
 
         // this starts the death timer, after which the person dies due to the infection
         deathBar.barLifeTime = infectionToDeathDuration;
         deathBar.Start();
         
-        StartCoroutine(TriggerDeathTimer(infectionToDeathDuration));
+        StartCoroutine(TriggerDeathTimer());
     }
 
     public void TriggerDeath()
@@ -59,16 +61,26 @@ public class Person : MonoBehaviour
     }
 
 // the collider is enabled if the person is infected
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerStay(Collider other)
     {
-        if (!other.CompareTag(GetTag(PersonTags.Infected))) return;
+        var otherTag = other.tag;
+        if (otherTag != GetTag(PersonTags.Infected) && otherTag != GetTag(PersonTags.Contagious)) return;
         
+        StartCoroutine(TriggerInfectionTimer());
+    }
+    
+    IEnumerator TriggerInfectionTimer()
+    {
+        gameObject.tag = GetTag(PersonTags.Infected);
+        yield return new WaitForSeconds(infectionActivationDuration);
+ 
+        // Code to execute after the delay
         TriggerInfection();
     }
     
-    IEnumerator TriggerDeathTimer(float time)
+    IEnumerator TriggerDeathTimer()
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(infectionToDeathDuration);
  
         // Code to execute after the delay
         TriggerDeath();
@@ -110,6 +122,8 @@ public class Person : MonoBehaviour
                 return "Healthy Person";
             case PersonTags.Infected:
                 return "Infected Person";
+            case PersonTags.Contagious:
+                return "Contagious Person";
             case PersonTags.Dead:
                 return "Dead Person";
             default:
@@ -117,22 +131,27 @@ public class Person : MonoBehaviour
         }
     }
 
-    private void GetPersonCash()
+    private static void GetPersonCashFromPref()
     {
         if (PlayerPrefs.HasKey("PersonCash"))
         {
-            personCash = PlayerPrefs.GetInt("PlayerCash");
+            _personCash = PlayerPrefs.GetInt("PersonCash");
         }
         else
         {
-            PlayerPrefs.SetInt("PersonCash", personCash);
+            SetPersonCashToPref();
         }
+    }
+
+    private static void SetPersonCashToPref()
+    {
+        PlayerPrefs.SetInt("PersonCash", _personCash);
     }
 
     public static void UpdatePersonCash()
     {
-        var currentPersonCash = PlayerPrefs.GetInt("PersonCash");
-        currentPersonCash = (int) (currentPersonCash * 0.5f);
-        PlayerPrefs.SetInt("PersonCash", currentPersonCash);
+        _personCash += (int) (_personCash * PersonCashMultiplier);
+
+        SetPersonCashToPref();
     }
 }
