@@ -37,8 +37,6 @@ public class CashManager : MonoBehaviour
         {
             SetPlayerCashToPref();
         }
-        
-        Debug.Log("cash: " + _cash);
     }
 
     private static void SetPlayerCashToPref()
@@ -75,5 +73,10 @@ public class CashManager : MonoBehaviour
         if (cash > 100000) return ((int)(cash / 10000)).ToString("F") + "M";
         if (cash > 10000) return ((int)(cash / 1000)).ToString("F") + "K";
         return cash.ToString();
+    }
+
+    public static int GetCash()
+    {
+        return _cash;
     }
 }

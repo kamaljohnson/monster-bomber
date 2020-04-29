@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 
@@ -24,6 +25,8 @@ public class PowerUp : MonoBehaviour
     public List<float> powerUpMultipliers;
 
     private bool _adSupport;
+    private int adShowCount = 3;    
+    private int _adCounter;
     
     private void Start()
     {
@@ -32,12 +35,12 @@ public class PowerUp : MonoBehaviour
     }
 
     public void RequestPowerUpActivation()
-    {
+    {        
         var priceOfPowerUp = GetPriceOfPowerUpFromPref();
         bool purchaseStatus;
         
-        purchaseStatus = priceOfPowerUp == 0 || CashManager.MakePurchase(priceOfPowerUp);
-        
+        purchaseStatus = _adSupport || CashManager.MakePurchase(priceOfPowerUp);
+
         if (purchaseStatus)
         {
             ActivatePowerUp();
@@ -83,17 +86,36 @@ public class PowerUp : MonoBehaviour
     {
         powerUpCost = (int)(powerUpCost * powerUpMultipliers[(int)type]);
         SetPowerUpCostToPref(powerUpCost);
+        
+        if (CashManager.GetCash() < powerUpCost && !_adSupport)
+        {
+            _adSupport = true;
+        }
+        else
+        {
+            _adSupport = false;
+        }
+        
+        _adCounter++;
+        if (_adCounter >= adShowCount || _adSupport)
+        {
+            _adSupport = true;
+            _adCounter = 0;
+        }
+        
         UpdateUi();
     }
 
     private void UpdateUi()
     {
         powerUpCostText.text = CashManager.GetCashIn_kmb(powerUpCost) + " $";
-        if (_adSupport)
+
+        //TODO: get actual availability
+        var adAvailable = true;
+        if (_adSupport && adAvailable)
         {
             adIcon.gameObject.SetActive(true);
             powerUpCostText.gameObject.SetActive(false);
-
         }
         else
         {
@@ -115,6 +137,11 @@ public class PowerUp : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
+
+    private void ResetAdCounter()
+    {
+        _adCounter = 0;
     }
 }
 
