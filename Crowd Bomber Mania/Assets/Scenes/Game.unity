@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cashText: {fileID: 32601138}
+  animator: {fileID: 32601141}
 --- !u!95 &32601141
 Animator:
   serializedVersion: 3
@@ -571,6 +572,7 @@ GameObject:
   - component: {fileID: 51480279}
   - component: {fileID: 51480281}
   - component: {fileID: 51480280}
+  - component: {fileID: 51480282}
   m_Layer: 5
   m_Name: ad icon
   m_TagString: Untagged
@@ -636,6 +638,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51480278}
   m_CullTransparentMesh: 0
+--- !u!95 &51480282
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51480278}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37837915c5ec015488b3f62332dcf1a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &54433648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,7 +1367,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1960,6 +1981,7 @@ GameObject:
   - component: {fileID: 654379481}
   - component: {fileID: 654379483}
   - component: {fileID: 654379482}
+  - component: {fileID: 654379484}
   m_Layer: 5
   m_Name: ad icon
   m_TagString: Untagged
@@ -2025,6 +2047,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654379480}
   m_CullTransparentMesh: 0
+--- !u!95 &654379484
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654379480}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37837915c5ec015488b3f62332dcf1a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &655863407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2595,6 +2636,7 @@ GameObject:
   - component: {fileID: 782177872}
   - component: {fileID: 782177874}
   - component: {fileID: 782177873}
+  - component: {fileID: 782177875}
   m_Layer: 5
   m_Name: ad icon
   m_TagString: Untagged
@@ -2660,6 +2702,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782177871}
   m_CullTransparentMesh: 0
+--- !u!95 &782177875
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782177871}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37837915c5ec015488b3f62332dcf1a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &807954554
 GameObject:
   m_ObjectHideFlags: 0
@@ -3415,7 +3476,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3609,7 +3670,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

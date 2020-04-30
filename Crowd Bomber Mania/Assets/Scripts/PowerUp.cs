@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum PowerUpType
 {
@@ -17,7 +18,7 @@ public class PowerUp : MonoBehaviour
     public PowerUpType type;
     public GameObject adIcon;
     public TMP_Text powerUpCostText;
-    
+
     public int powerUpCost;
 
     public List<int> powerUpInitialCosts;
