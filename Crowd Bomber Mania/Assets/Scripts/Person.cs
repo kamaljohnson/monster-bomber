@@ -40,7 +40,9 @@ public class Person : MonoBehaviour
         if(!gameObject.CompareTag(GetTag(PersonTags.Healthy))) return;
 
         gameObject.tag = GetTag(PersonTags.Infected);
-        
+
+        GameProgressManager.UpdateProgress();
+
         gameObject.GetComponent<PersonMovementController>().TriggerChasingMode();
         UpdatePersonModel();
         

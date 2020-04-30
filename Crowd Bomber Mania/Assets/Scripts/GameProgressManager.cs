@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public enum GameProgressState
@@ -12,7 +13,7 @@ public class GameProgressManager : MonoBehaviour
 {
     public Slider progressSlider;
 
-    public float progressStepPerCash;
+    public float progressStepPerPersonInfected;
 
     public float gameProgress;
 
@@ -28,9 +29,10 @@ public class GameProgressManager : MonoBehaviour
         GetProgressPerCashFromPref();
     }
 
-    public static void UpdateProgress(int cash)
+    public static void UpdateProgress()
     {
-        _gameProgressManager.gameProgress += _gameProgressManager.progressStepPerCash * cash;
+        _gameProgressManager.gameProgress += 6f / ( PersonSpawner.GetPersonCount() * 5f);
+        
         if (_gameProgressManager.gameProgress > _gameProgressManager.progressSlider.maxValue)
         {
             _progressState = GameProgressState.Complete;
@@ -48,7 +50,7 @@ public class GameProgressManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("ProgressPerCash"))
         {
-            _gameProgressManager.progressStepPerCash = PlayerPrefs.GetFloat("ProgressPerCash");
+            _gameProgressManager.progressStepPerPersonInfected = PlayerPrefs.GetFloat("ProgressPerCash");
         }
         else
         {
@@ -58,12 +60,12 @@ public class GameProgressManager : MonoBehaviour
 
     private static void SetProgressPerCashToPref()
     {
-        PlayerPrefs.SetFloat("ProgressPerCash", _gameProgressManager.progressStepPerCash);
+        PlayerPrefs.SetFloat("ProgressPerCash", _gameProgressManager.progressStepPerPersonInfected);
     }
     
     public static void UpdateProgressPerCash()
     {
-        _gameProgressManager.progressStepPerCash *= _gameProgressManager.progressMultiplier;
+        _gameProgressManager.progressStepPerPersonInfected *= _gameProgressManager.progressMultiplier;
         SetProgressPerCashToPref();
     }
     

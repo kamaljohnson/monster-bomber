@@ -19,6 +19,11 @@ public class PersonSpawner : MonoBehaviour
         GetPersonSpawnCountFromPref();
         SpawnPersons(initialPersonCount);
     }
+
+    public static int GetPersonCount()
+    {
+        return _spawner.initialPersonCount;
+    }
     
     public static void SpawnExtraPersons(int count)
     {
@@ -41,7 +46,7 @@ public class PersonSpawner : MonoBehaviour
 
     private static void SetPersonSpawnCountToPref()
     {
-        
+        PlayerPrefs.SetInt("InitialPersonCount", _spawner.initialPersonCount);
     }
     
     public static void SpawnPersons(int count)

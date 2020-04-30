@@ -11,6 +11,9 @@ public class Cannon : MonoBehaviour
     public TMP_Text remainingCannonBallCountText;
     
     public Transform shootTransform;
+
+    public AudioSource shootSound;
+    public Animator shootAnimator;
     
     private Rigidbody cannonballInstance;
 
@@ -98,6 +101,8 @@ public class Cannon : MonoBehaviour
 
     private void FireCannonAtPoint(Vector3 point)
     {
+        shootSound.Play();
+        shootAnimator.Play("CannonShootAnimation", -1, 0f);
         _cannonBallsLeft--;
         _reloaded = false;
         

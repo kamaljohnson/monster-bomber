@@ -23,7 +23,6 @@ public class CashManager : MonoBehaviour
         Debug.Log("cash added : " + cash);
         _cash += cash;
         SetPlayerCashToPref();
-        GameProgressManager.UpdateProgress(cash);
         _cashManager.UpdateUi();
     }
 

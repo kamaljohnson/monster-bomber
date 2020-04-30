@@ -5,13 +5,18 @@ public class LevelManager : MonoBehaviour
 {
     public TMP_Text levelText;
 
-    public static int currentLevel = 1;
+    private static int currentLevel = 1;
     
     private void Start()
     {
         GetLevelFromPref();
         
         UpdateUi();
+    }
+
+    public static int GetCurrentLevel()
+    {
+        return currentLevel;
     }
     
     public void IncrementLevel()

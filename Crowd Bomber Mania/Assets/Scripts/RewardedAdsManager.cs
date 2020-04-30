@@ -13,11 +13,11 @@ public class RewardedAdsManager : MonoBehaviour, IUnityAdsListener {
     void Awake ()
     {
         _rewardedAds = this;
-        _adReady = false;
         
         // Initialize the Ads listener and service:
         Advertisement.AddListener (this);
         Advertisement.Initialize (gameId, testMode);
+        IsAdReady();
     }
 
     // Implement a function for showing a rewarded video ad:
