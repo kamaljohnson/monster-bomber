@@ -1,11 +1,14 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 public class CashManager : MonoBehaviour
 {
     public TMP_Text cashText;
 
+    public Animator animator;
+    
     private static int _cash;
 
     private static CashManager _cashManager;
@@ -24,6 +27,14 @@ public class CashManager : MonoBehaviour
         _cash += cash;
         SetPlayerCashToPref();
         _cashManager.UpdateUi();
+        if (cash > 0)
+        {
+            _cashManager.animator.Play("CashAddAnimation", -1, 0f);
+        }
+        else
+        {
+            _cashManager.animator.Play("CashDeductAnimation", -1, 0f);
+        }
     }
 
     private static void GetPlayerCashFromPref()
@@ -55,6 +66,7 @@ public class CashManager : MonoBehaviour
 
         if (purchaseFlag == false)
         {
+            _cashManager.animator.Play("NotEnoughCashAnimation", -1, 0f);
             Debug.Log("Not enough cash");
         }
 
