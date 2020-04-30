@@ -26,6 +26,8 @@ public class Person : MonoBehaviour
 
     public InfectedDeathBar deathBar;
 
+    public GameObject personCashNotificationObject;
+
     private void Start()
     {
         GetPersonCashFromPref();
@@ -40,6 +42,10 @@ public class Person : MonoBehaviour
         gameObject.GetComponent<PersonMovementController>().TriggerChasingMode();
         gameObject.GetComponent<MeshRenderer>().material = infectedMaterial;
 
+        var notificationObj = Instantiate(personCashNotificationObject, transform.position, transform.rotation);
+        notificationObj.GetComponent<PersonCashNotification>().SetCashAmount(_personCash);
+        Destroy(notificationObj, 0.5f);
+        
         CashManager.AddOrRemoveCash(_personCash);
 
         // this starts the death timer, after which the person dies due to the infection

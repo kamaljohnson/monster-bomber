@@ -16,6 +16,7 @@
           <e p="InfectedDeathBar.cs" t="Include" />
           <e p="LevelManager.cs" t="Include" />
           <e p="Person.cs" t="Include" />
+          <e p="PersonCashNotification.cs" t="Include" />
           <e p="PersonMovementController.cs" t="Include" />
           <e p="PersonSpawner.cs" t="Include" />
           <e p="PowerUp.cs" t="Include" />

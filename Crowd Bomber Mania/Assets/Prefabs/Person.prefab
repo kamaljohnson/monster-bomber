@@ -204,6 +204,8 @@ MonoBehaviour:
   - {fileID: 2888154953746705771}
   - {fileID: 2888154953746705770}
   deathBar: {fileID: 6027938237033331164}
+  personCashNotificationObject: {fileID: 3664390733541806013, guid: 75f513a4b7afb5546a491131bb987d70,
+    type: 3}
 --- !u!114 &2888154953746705773
 MonoBehaviour:
   m_ObjectHideFlags: 0
