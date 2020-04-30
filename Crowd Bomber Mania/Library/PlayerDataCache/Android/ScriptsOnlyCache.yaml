@@ -10,6 +10,7 @@ ScriptsOnlyBuild:
     - InfectedDeathBar
     - LevelManager
     - Person
+    - PersonCashNotification
     - PersonMovementController
     - PersonSpawner
     - PowerUp
@@ -144,6 +145,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 82658}
     - Class: 114
       Script: {instanceID: 99334}
+    - Class: 114
+      Script: {instanceID: 112312}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -311,7 +314,7 @@ ScriptsOnlyBuild:
     className: CanonBall
   - hash:
       serializedVersion: 2
-      Hash: 3d07d1bf606b56679966cd2eaf52b55e
+      Hash: d30c2df5f8d296ec7ee7d91ccdad903a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Person
@@ -705,6 +708,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UnityBannerAds
+  - hash:
+      serializedVersion: 2
+      Hash: 66c6d1cc8ac213d8b6c7c654dbd86d08
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PersonCashNotification
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity

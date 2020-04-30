@@ -731,10 +731,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 8e63ae1e-7ce2-4c9f-b49c-d97f793ffc61
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Crowd Bomber Clone
+  organizationId: kamaljohnson123
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

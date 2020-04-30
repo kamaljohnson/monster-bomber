@@ -6,8 +6,8 @@ public class PersonMovementController : MonoBehaviour
 {
     public NavMeshAgent agent;
 
-    private const float AgentWalkSpeed = 2f;
-    private const float HealthyAgentRunSpeed = 2.5f;
+    private const float AgentWalkSpeed = 1f;
+    private const float HealthyAgentRunSpeed = 2f;
     private static float _infectedAgentRunSpeed = 3f;
     
     public Vector2 groundDimention;
@@ -100,6 +100,9 @@ public class PersonMovementController : MonoBehaviour
         isChasedByInfectedPerson = true;
         this.chasingPerson = chasingPerson;
         agent.speed = HealthyAgentRunSpeed;
+        gameObject.GetComponent<Person>().currentPersonModel
+            .GetComponent<PersonAnimationController>()
+            .PlayAnimation(AnimationType.Run);
     }
 
     // Infected Person
@@ -113,6 +116,9 @@ public class PersonMovementController : MonoBehaviour
     {
         isChasedByInfectedPerson = false;
         agent.speed = AgentWalkSpeed;
+        gameObject.GetComponent<Person>().currentPersonModel
+            .GetComponent<PersonAnimationController>()
+            .PlayAnimation(AnimationType.Run);
     }
     
     private bool CheckDestinationReached()

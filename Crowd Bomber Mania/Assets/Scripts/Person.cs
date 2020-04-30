@@ -14,10 +14,6 @@ public class Person : MonoBehaviour
 {
     // after the infection duration the peron will get killed
     public float infectionToDeathDuration;
-    public float infectionActivationDuration;
-
-    public Material infectedMaterial;
-    public Material deadMaterial;
 
     public List<Object> listOfObjectsToBeCleanedAfterDeath;
 
@@ -28,9 +24,15 @@ public class Person : MonoBehaviour
 
     public GameObject personCashNotificationObject;
 
+    public GameObject healthPersonModel;
+    public GameObject infectedPersonModel;
+
+    public GameObject currentPersonModel;
+    
     private void Start()
     {
         GetPersonCashFromPref();
+        UpdatePersonModel();
     }
 
     public void TriggerInfection()
@@ -40,8 +42,8 @@ public class Person : MonoBehaviour
         gameObject.tag = GetTag(PersonTags.Infected);
         
         gameObject.GetComponent<PersonMovementController>().TriggerChasingMode();
-        gameObject.GetComponent<MeshRenderer>().material = infectedMaterial;
-
+        UpdatePersonModel();
+        
         var notificationObj = Instantiate(personCashNotificationObject, transform.position, transform.rotation);
         notificationObj.GetComponent<PersonCashNotification>().SetCashAmount(_personCash);
         Destroy(notificationObj, 0.5f);
@@ -58,7 +60,8 @@ public class Person : MonoBehaviour
     public void TriggerDeath()
     {
         gameObject.tag = GetTag(PersonTags.Dead);
-        gameObject.GetComponent<MeshRenderer>().material = deadMaterial;
+        currentPersonModel.GetComponent<PersonAnimationController>().PlayAnimation(AnimationType.Die);
+        
         GameManager.ReportPersonDead();
         CleanupShit();
     }
@@ -144,5 +147,20 @@ public class Person : MonoBehaviour
         _personCash += (int) (_personCash * PersonCashMultiplier);
 
         SetPersonCashToPref();
+    }
+
+    public void UpdatePersonModel()
+    {
+        if (gameObject.CompareTag(GetTag(PersonTags.Healthy)))
+        {
+            currentPersonModel = healthPersonModel;
+            infectedPersonModel.SetActive(false);
+        }
+        else
+        {
+            currentPersonModel = infectedPersonModel;
+            healthPersonModel.SetActive(false);
+        }
+        currentPersonModel.SetActive(true);
     }
 }
