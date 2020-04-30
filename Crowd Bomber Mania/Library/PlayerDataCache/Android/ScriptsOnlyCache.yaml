@@ -14,6 +14,7 @@ ScriptsOnlyBuild:
     - PersonSpawner
     - PowerUp
     - RewardedAdsManager
+    - UnityVideoAds
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.RiderScriptEditorData
     Unity.TextMeshPro.dll:
@@ -36,6 +37,8 @@ ScriptsOnlyBuild:
     UnityEngine.Advertisements.dll:
     - UnityEngine.Advertisements.Placeholder
     - UnityEngine.Advertisements.Platform.Editor.BannerPlaceholder
+    UnityEngine.Monetization.dll:
+    - UnityEngine.Monetization.Placeholder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -136,6 +139,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11412}
     - Class: 114
       Script: {instanceID: 56762}
+    - Class: 114
+      Script: {instanceID: 82658}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -363,7 +368,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 1d5af7199f64036d6153e6f4ec47b964
+      Hash: 905581c2a75f5b58dc26c82fe5a854bc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -685,6 +690,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.Advertisements.dll
     namespaceName: UnityEngine.Advertisements.Utilities
     className: CoroutineExecutor
+  - hash:
+      serializedVersion: 2
+      Hash: c0f53b9f9da21c5872a89f27ce9b6acc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UnityVideoAds
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity

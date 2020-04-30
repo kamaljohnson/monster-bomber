@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum GameState
 {
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
     
     public GameObject bottomPowerUpUi;
 
-    public GameObject gameOverUi;
+    public GameObject transitionUi;
     public GameObject gameWonUi;
     
     public void Start()
@@ -35,11 +36,11 @@ public class GameManager : MonoBehaviour
 
     public void GoToMenu()
     {
+        StartCoroutine(TriggerTransitionAnimation());
         _gameManager.ShowMenu();
 
         Reset();
 
-        _gameManager.gameOverUi.SetActive(false);
         _gameManager.gameWonUi.SetActive(false);
         
         GameState = GameState.AtMenu;
@@ -54,14 +55,19 @@ public class GameManager : MonoBehaviour
 
     public static void GameOver()
     {
-        UnityVideoAds.ShowAd();
-        GameState = GameState.GameOver;
-        _gameManager.gameOverUi.SetActive(true);
         CanPlay = false;
+        // UnityVideoAds.ShowAd();
+        _gameManager.DelayedGoToMenu();
     }
 
+    public void DelayedGoToMenu()
+    {
+        StartCoroutine(TriggerGoToMenu());
+    }
+    
     public static void GameWon()
     {
+        UnityVideoAds.ShowAd();
         GameState = GameState.GameWon;
         _gameManager.gameWonUi.SetActive(true);
         CanPlay = false;
@@ -111,10 +117,23 @@ public class GameManager : MonoBehaviour
         bottomPowerUpUi.GetComponent<Animator>().Play("BottomPowerUpAnimateOut", -1, 0);
     }
 
+    IEnumerator TriggerGoToMenu()
+    {
+        yield return new WaitForSeconds(1f);
+        GoToMenu();        
+    }
+    
     IEnumerator TriggerCanPlay()
     {
         yield return new WaitForSeconds(1f);
         CanPlay = true;
+    }
+    
+    IEnumerator TriggerTransitionAnimation()
+    {
+        transitionUi.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        transitionUi.SetActive(false);
     }
     
     private void Reset()
