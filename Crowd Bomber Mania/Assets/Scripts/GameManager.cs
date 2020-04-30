@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
 
     public static void GameOver()
     {
+        UnityVideoAds.ShowAd();
         GameState = GameState.GameOver;
         _gameManager.gameOverUi.SetActive(true);
         CanPlay = false;

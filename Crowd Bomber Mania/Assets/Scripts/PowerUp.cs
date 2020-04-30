@@ -41,6 +41,11 @@ public class PowerUp : MonoBehaviour
         
         purchaseStatus = _adSupport || CashManager.MakePurchase(priceOfPowerUp);
 
+        if (_adSupport)
+        {
+            RewardedAdsManager.ShowRewardedVideo();
+        }
+        
         if (purchaseStatus)
         {
             ActivatePowerUp();
@@ -111,7 +116,7 @@ public class PowerUp : MonoBehaviour
         powerUpCostText.text = CashManager.GetCashIn_kmb(powerUpCost) + " $";
 
         //TODO: get actual availability
-        var adAvailable = true;
+        var adAvailable = RewardedAdsManager.IsAdReady();
         if (_adSupport && adAvailable)
         {
             adIcon.gameObject.SetActive(true);
