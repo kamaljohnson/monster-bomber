@@ -103,7 +103,7 @@ public class Cannon : MonoBehaviour
         
         var rotation = transform.rotation;
         transform.LookAt(point);
-        rotation.eulerAngles = new Vector3(rotation.x,transform.rotation.eulerAngles.y , rotation.z);
+        rotation.eulerAngles = new Vector3(rotation.x, transform.rotation.eulerAngles.y , rotation.z);
         transform.rotation = rotation;
 
         var cannonBallObject = GameObject.Instantiate(cannonBall);

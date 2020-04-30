@@ -50,6 +50,7 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="UnityBannerAds.cs" t="Include" />
       </e>
       <e p="Crowd Bomber Mania.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />

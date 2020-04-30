@@ -14,6 +14,7 @@ ScriptsOnlyBuild:
     - PersonSpawner
     - PowerUp
     - RewardedAdsManager
+    - UnityBannerAds
     - UnityVideoAds
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.RiderScriptEditorData
@@ -141,6 +142,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 56762}
     - Class: 114
       Script: {instanceID: 82658}
+    - Class: 114
+      Script: {instanceID: 99334}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -656,7 +659,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 4ced5224ec303e39aba130e4eaa4a42d
+      Hash: 038441e9b43244922e638f9e3c2e7d47
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RewardedAdsManager
@@ -696,6 +699,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UnityVideoAds
+  - hash:
+      serializedVersion: 2
+      Hash: f17692a679ab90787bb921805126187b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UnityBannerAds
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity

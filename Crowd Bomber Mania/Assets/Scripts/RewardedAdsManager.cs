@@ -3,9 +3,9 @@ using UnityEngine.Advertisements;
 
 public class RewardedAdsManager : MonoBehaviour, IUnityAdsListener {
 
-    private string gameId = "3580709";
-    public bool testMode = true;
     public string myPlacementId = "rewardedVideo";
+    public string gameId = "3580709";
+    public bool testMode = true;
 
     private static RewardedAdsManager _rewardedAds;
     private static bool _adReady;

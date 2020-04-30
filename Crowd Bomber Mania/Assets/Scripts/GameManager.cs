@@ -26,9 +26,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject transitionUi;
     public GameObject gameWonUi;
+
+    private static int _adCounter;
     
     public void Start()
     {
+        _adCounter = 0;
         GameState = GameState.AtMenu;
         _gameManager = this;
         GoToMenu();
@@ -56,6 +59,7 @@ public class GameManager : MonoBehaviour
     public static void GameOver()
     {
         CanPlay = false;
+        ShowAdIfCounter();
         // UnityVideoAds.ShowAd();
         _gameManager.DelayedGoToMenu();
     }
@@ -67,12 +71,20 @@ public class GameManager : MonoBehaviour
     
     public static void GameWon()
     {
-        UnityVideoAds.ShowAd();
+        ShowAdIfCounter();
         GameState = GameState.GameWon;
         _gameManager.gameWonUi.SetActive(true);
         CanPlay = false;
     }
 
+    private static void ShowAdIfCounter()
+    {
+        _adCounter++;
+        if (_adCounter < 3) return;
+        UnityVideoAds.ShowAd();
+        _adCounter = 0;
+    }
+    
     public static void ReportPersonDead()
     {
         _gameManager.CheckGameEnding();
