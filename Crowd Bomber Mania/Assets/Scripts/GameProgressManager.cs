@@ -18,6 +18,8 @@ public class GameProgressManager : MonoBehaviour
     public float gameProgress;
 
     public float progressMultiplier;
+
+    public Animator animator;
     
     private static GameProgressManager _gameProgressManager;
 
@@ -31,6 +33,8 @@ public class GameProgressManager : MonoBehaviour
 
     public static void UpdateProgress()
     {
+        _gameProgressManager.animator.Play("ProgressBarAnimation", -1, 0f);
+
         _gameProgressManager.gameProgress += 6f / (PersonSpawner.GetPersonCount() * 5f);
         
         Debug.Log("progress: " + _gameProgressManager.gameProgress);

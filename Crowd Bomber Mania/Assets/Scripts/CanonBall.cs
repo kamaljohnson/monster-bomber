@@ -5,10 +5,13 @@ public class CanonBall : MonoBehaviour
 {
     public float destructionDuration;
 
+    public AudioSource cannonHitSound;
+    
     public void OnCollisionEnter(Collision other)
     {
         if (other.collider.CompareTag("Ground"))
         {
+            cannonHitSound.Play();
             Destroy(gameObject, destructionDuration);
         }
     }

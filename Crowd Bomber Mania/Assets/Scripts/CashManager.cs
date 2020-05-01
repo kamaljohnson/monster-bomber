@@ -8,6 +8,10 @@ public class CashManager : MonoBehaviour
     public TMP_Text cashText;
 
     public Animator animator;
+
+    public AudioSource cashAddSound;
+    public AudioSource cashRemoveSound;
+    public AudioSource notEnoughCashSound;
     
     private static int _cash;
 
@@ -29,10 +33,12 @@ public class CashManager : MonoBehaviour
         _cashManager.UpdateUi();
         if (cash > 0)
         {
+            _cashManager.cashAddSound.Play();
             _cashManager.animator.Play("CashAddAnimation", -1, 0f);
         }
         else
         {
+            _cashManager.cashRemoveSound.Play();
             _cashManager.animator.Play("CashDeductAnimation", -1, 0f);
         }
     }
@@ -67,6 +73,7 @@ public class CashManager : MonoBehaviour
         if (purchaseFlag == false)
         {
             _cashManager.animator.Play("NotEnoughCashAnimation", -1, 0f);
+            _cashManager.notEnoughCashSound.Play();
             Debug.Log("Not enough cash");
         }
 

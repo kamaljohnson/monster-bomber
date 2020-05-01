@@ -29,10 +29,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -99,63 +97,63 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9724}
+      Script: {instanceID: 16272}
     - Class: 114
-      Script: {instanceID: 9734}
+      Script: {instanceID: 16282}
     - Class: 114
-      Script: {instanceID: 9768}
+      Script: {instanceID: 16314}
     - Class: 114
-      Script: {instanceID: 9818}
+      Script: {instanceID: 16362}
     - Class: 114
-      Script: {instanceID: 9942}
+      Script: {instanceID: 16482}
     - Class: 114
-      Script: {instanceID: 10006}
+      Script: {instanceID: 16516}
     - Class: 114
-      Script: {instanceID: 10082}
+      Script: {instanceID: 16546}
     - Class: 114
-      Script: {instanceID: 10132}
+      Script: {instanceID: 16622}
     - Class: 114
-      Script: {instanceID: 10156}
+      Script: {instanceID: 16670}
     - Class: 114
-      Script: {instanceID: 10244}
+      Script: {instanceID: 16692}
     - Class: 114
-      Script: {instanceID: 10300}
+      Script: {instanceID: 16780}
     - Class: 114
-      Script: {instanceID: 10356}
+      Script: {instanceID: 16836}
     - Class: 114
-      Script: {instanceID: 10376}
+      Script: {instanceID: 16892}
     - Class: 114
-      Script: {instanceID: 10378}
+      Script: {instanceID: 16912}
     - Class: 114
-      Script: {instanceID: 10384}
+      Script: {instanceID: 16914}
     - Class: 114
-      Script: {instanceID: 10476}
+      Script: {instanceID: 16918}
     - Class: 114
-      Script: {instanceID: 10478}
+      Script: {instanceID: 17004}
     - Class: 114
-      Script: {instanceID: 10552}
+      Script: {instanceID: 17006}
     - Class: 114
-      Script: {instanceID: 10762}
+      Script: {instanceID: 17076}
     - Class: 114
-      Script: {instanceID: 10984}
+      Script: {instanceID: 17282}
     - Class: 114
-      Script: {instanceID: 10998}
+      Script: {instanceID: 17492}
     - Class: 114
-      Script: {instanceID: 11176}
+      Script: {instanceID: 17504}
     - Class: 114
-      Script: {instanceID: 11240}
+      Script: {instanceID: 17680}
     - Class: 114
-      Script: {instanceID: 11350}
+      Script: {instanceID: 17742}
     - Class: 114
-      Script: {instanceID: 11414}
+      Script: {instanceID: 17850}
     - Class: 114
-      Script: {instanceID: 11436}
+      Script: {instanceID: 17914}
     - Class: 114
-      Script: {instanceID: 11628}
+      Script: {instanceID: 17934}
     - Class: 114
-      Script: {instanceID: 11664}
+      Script: {instanceID: 18122}
     - Class: 114
-      Script: {instanceID: 20662}
+      Script: {instanceID: 18158}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -301,6 +299,12 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
+      Hash: 30f3213a6e218a461fa00e428f22d3eb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PersonAnimationController
+  - hash:
+      serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -337,7 +341,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 367a3f99deb77df789d66b3d7d48bfdc
+      Hash: cf357a28c8f7f62f6056a203ef222f5c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CanonBall
@@ -433,7 +437,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
-      Hash: 2f67bb788db70d719aacc40613d80482
+      Hash: 3ae4587881c02e8226cf8186e2132b3e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CashManager
@@ -523,6 +527,12 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: BrokenVector.LowPolyFencePack
+    className: DoorToggle
+  - hash:
+      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -575,6 +585,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 2e0617456ef7995d079420da481211e4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: BrokenVector.LowPolyFencePack
+    className: DoorController
   - hash:
       serializedVersion: 2
       Hash: ee0cef6caaac8ae485bfa82f000f0f7b
@@ -725,12 +741,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 30f3213a6e218a461fa00e428f22d3eb
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PersonAnimationController
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity

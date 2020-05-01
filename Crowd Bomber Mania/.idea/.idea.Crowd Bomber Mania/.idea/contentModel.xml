@@ -6,6 +6,17 @@
     <e p="D:\games\crowd-bomber-mania\Crowd Bomber Mania" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="BrokenVector" t="Include">
+          <e p="LowPolyFencePack" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="DoorController.cs" t="Include" />
+              <e p="DoorToggle.cs" t="Include" />
+            </e>
+          </e>
+          <e p="LowPolyTreePack" t="Include">
+            <e p="README.txt" t="Include" />
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="BillBoardScript.cs" t="Include" />
           <e p="Cannon.cs" t="Include" />
