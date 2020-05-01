@@ -29,8 +29,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -89,6 +91,8 @@ ScriptsOnlyBuild:
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
+      Script: {instanceID: 0}
+    - Class: 96
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -365,7 +369,7 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
-      Hash: 7403d5e9cc183f81a759a50bc61d0f84
+      Hash: 087e2229c01789f9122a4480f08e03c5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameProgressManager
@@ -744,4 +748,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: D:/games/crowd-bomber-mania/Crowd Bomber Mania/Builds/debug-build.apk
+  playerPath: D:/games/crowd-bomber-mania/Crowd Bomber Mania/Builds/1-5-20.aab

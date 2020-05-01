@@ -53,6 +53,11 @@ public class PowerUp : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
     public void ActivatePowerUp()
     {
         switch (type)
@@ -105,7 +110,6 @@ public class PowerUp : MonoBehaviour
         _adCounter++;
         if (_adCounter >= adShowCount || _adSupport)
         {
-            _adSupport = true;
             _adCounter = 0;
         }
         
@@ -116,15 +120,15 @@ public class PowerUp : MonoBehaviour
     {
         powerUpCostText.text = CashManager.GetCashIn_kmb(powerUpCost) + " $";
 
-        //TODO: get actual availability
         var adAvailable = RewardedAdsManager.IsAdReady();
         if (_adSupport && adAvailable)
-        {
+        {    
             adIcon.gameObject.SetActive(true);
             powerUpCostText.gameObject.SetActive(false);
         }
         else
         {
+            _adSupport = false;
             powerUpCostText.gameObject.SetActive(true);
             adIcon.gameObject.SetActive(false);
         }

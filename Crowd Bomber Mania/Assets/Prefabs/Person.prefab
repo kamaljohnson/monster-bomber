@@ -710,14 +710,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2888154953746705782}
     m_Modifications:
-    - target: {fileID: 1975194375736644, guid: 128a80094e00bf34fa2555766a7eea0e, type: 3}
-      propertyPath: m_Name
-      value: Boximon Fiery
-      objectReference: {fileID: 0}
-    - target: {fileID: 1975194375736644, guid: 128a80094e00bf34fa2555766a7eea0e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4744222756475520, guid: 128a80094e00bf34fa2555766a7eea0e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -773,6 +765,14 @@ PrefabInstance:
     - target: {fileID: 4744222756475520, guid: 128a80094e00bf34fa2555766a7eea0e, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.9486
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975194375736644, guid: 128a80094e00bf34fa2555766a7eea0e, type: 3}
+      propertyPath: m_Name
+      value: Boximon Fiery
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975194375736644, guid: 128a80094e00bf34fa2555766a7eea0e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 128a80094e00bf34fa2555766a7eea0e, type: 3}
