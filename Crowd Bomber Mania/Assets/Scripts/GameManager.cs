@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     
     public void Start()
     {
+        Screen.orientation = ScreenOrientation.Portrait;
         _adCounter = 0;
         GameState = GameState.AtMenu;
         _gameManager = this;

@@ -80,6 +80,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 90
@@ -417,7 +421,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: ce23c818060a850d642c684aaa54a2e9
+      Hash: d48c76b5a22657030f59fc672d78aefe
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Cannon
@@ -429,7 +433,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
-      Hash: f15735a29b4c662e607998a7b575e958
+      Hash: 2f67bb788db70d719aacc40613d80482
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CashManager

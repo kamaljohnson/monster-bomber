@@ -31,7 +31,9 @@ public class GameProgressManager : MonoBehaviour
 
     public static void UpdateProgress()
     {
-        _gameProgressManager.gameProgress += 6f / ( PersonSpawner.GetPersonCount() * 5f);
+        _gameProgressManager.gameProgress += 6f / (PersonSpawner.GetPersonCount() * 5f);
+        
+        Debug.Log("progress: " + _gameProgressManager.gameProgress);
         
         if (_gameProgressManager.gameProgress > _gameProgressManager.progressSlider.maxValue)
         {
