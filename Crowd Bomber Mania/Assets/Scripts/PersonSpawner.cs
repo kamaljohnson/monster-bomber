@@ -22,6 +22,7 @@ public class PersonSpawner : MonoBehaviour
 
     public static int GetPersonCount()
     {
+        GetPersonSpawnCountFromPref();
         return _spawner.initialPersonCount;
     }
     

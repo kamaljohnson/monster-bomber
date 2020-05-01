@@ -6,7 +6,19 @@ public class CanonBall : MonoBehaviour
     public float destructionDuration;
 
     public AudioSource cannonHitSound;
+
+    private float _destroyCheckerTimer;
     
+    public void Update()
+    {
+        _destroyCheckerTimer += Time.deltaTime;
+        if (_destroyCheckerTimer >= 10)
+        {
+            cannonHitSound.Play();
+            Destroy(gameObject);
+        }
+    }
+
     public void OnCollisionEnter(Collision other)
     {
         if (other.collider.CompareTag("Ground"))

@@ -98,6 +98,12 @@ public class GameManager : MonoBehaviour
 
     private void CheckGameEnding()
     {
+        var numberOfDeadPersons = GameObject.FindGameObjectsWithTag(Person.GetTag(PersonTags.Dead)).Length;
+        if (numberOfDeadPersons == PersonSpawner.GetPersonCount())
+        {    
+            GameWon();
+            return;
+        }
         if (Cannon.CannonBallsRemaining() != 0) return;
         
         var cannonBallsInAir = GameObject.FindGameObjectsWithTag("CannonBall");

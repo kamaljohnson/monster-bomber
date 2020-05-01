@@ -1,7 +1,5 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UIElements;
 
 public class CashManager : MonoBehaviour
 {
@@ -27,7 +25,6 @@ public class CashManager : MonoBehaviour
     // -ve cash will be deducted
     public static void AddOrRemoveCash(int cash)
     {
-        Debug.Log("cash added : " + cash);
         _cash += cash;
         SetPlayerCashToPref();
         _cashManager.UpdateUi();

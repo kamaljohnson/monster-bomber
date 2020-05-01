@@ -52,12 +52,7 @@ public class PowerUp : MonoBehaviour
             ActivatePowerUp();
         }
     }
-
-    private void Update()
-    {
-        PlayerPrefs.DeleteAll();
-    }
-
+    
     public void ActivatePowerUp()
     {
         switch (type)
@@ -97,15 +92,9 @@ public class PowerUp : MonoBehaviour
     {
         powerUpCost = (int)(powerUpCost * powerUpMultipliers[(int)type]);
         SetPowerUpCostToPref(powerUpCost);
-        
-        if (CashManager.GetCash() < powerUpCost && !_adSupport)
-        {
+
+        if (CashManager.GetCash() < powerUpCost)
             _adSupport = true;
-        }
-        else
-        {
-            _adSupport = false;
-        }
         
         _adCounter++;
         if (_adCounter >= adShowCount || _adSupport)

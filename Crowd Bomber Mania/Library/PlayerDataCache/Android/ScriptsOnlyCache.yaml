@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - Cannon
     - CanonBall
     - CashManager
+    - GameAudioManager
     - GameManager
     - GameProgressManager
     - InfectedDeathBar
@@ -18,8 +19,6 @@ ScriptsOnlyBuild:
     - RewardedAdsManager
     - UnityBannerAds
     - UnityVideoAds
-    Unity.Rider.Editor.dll:
-    - Packages.Rider.Editor.RiderScriptEditorData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -29,19 +28,11 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
-    UnityEngine.Advertisements.dll:
-    - UnityEngine.Advertisements.Placeholder
-    - UnityEngine.Advertisements.Platform.Editor.BannerPlaceholder
-    UnityEngine.Monetization.dll:
-    - UnityEngine.Monetization.Placeholder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -101,63 +92,65 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 16272}
+      Script: {instanceID: 9724}
     - Class: 114
-      Script: {instanceID: 16282}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 16314}
+      Script: {instanceID: 9768}
     - Class: 114
-      Script: {instanceID: 16362}
+      Script: {instanceID: 9818}
     - Class: 114
-      Script: {instanceID: 16482}
+      Script: {instanceID: 9942}
     - Class: 114
-      Script: {instanceID: 16516}
+      Script: {instanceID: 9978}
     - Class: 114
-      Script: {instanceID: 16546}
+      Script: {instanceID: 10008}
     - Class: 114
-      Script: {instanceID: 16622}
+      Script: {instanceID: 10084}
     - Class: 114
-      Script: {instanceID: 16670}
+      Script: {instanceID: 10134}
     - Class: 114
-      Script: {instanceID: 16692}
+      Script: {instanceID: 10158}
     - Class: 114
-      Script: {instanceID: 16780}
+      Script: {instanceID: 10246}
     - Class: 114
-      Script: {instanceID: 16836}
+      Script: {instanceID: 10302}
     - Class: 114
-      Script: {instanceID: 16892}
+      Script: {instanceID: 10358}
     - Class: 114
-      Script: {instanceID: 16912}
+      Script: {instanceID: 10378}
     - Class: 114
-      Script: {instanceID: 16914}
+      Script: {instanceID: 10380}
     - Class: 114
-      Script: {instanceID: 16918}
+      Script: {instanceID: 10386}
     - Class: 114
-      Script: {instanceID: 17004}
+      Script: {instanceID: 10478}
     - Class: 114
-      Script: {instanceID: 17006}
+      Script: {instanceID: 10480}
     - Class: 114
-      Script: {instanceID: 17076}
+      Script: {instanceID: 10554}
     - Class: 114
-      Script: {instanceID: 17282}
+      Script: {instanceID: 10764}
     - Class: 114
-      Script: {instanceID: 17492}
+      Script: {instanceID: 10988}
     - Class: 114
-      Script: {instanceID: 17504}
+      Script: {instanceID: 11002}
     - Class: 114
-      Script: {instanceID: 17680}
+      Script: {instanceID: 11182}
     - Class: 114
-      Script: {instanceID: 17742}
+      Script: {instanceID: 11246}
     - Class: 114
-      Script: {instanceID: 17850}
+      Script: {instanceID: 11356}
     - Class: 114
-      Script: {instanceID: 17914}
+      Script: {instanceID: 11420}
     - Class: 114
-      Script: {instanceID: 17934}
+      Script: {instanceID: 11442}
     - Class: 114
-      Script: {instanceID: 18122}
+      Script: {instanceID: 11544}
     - Class: 114
-      Script: {instanceID: 18158}
+      Script: {instanceID: 11636}
+    - Class: 114
+      Script: {instanceID: 11672}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -663,6 +656,12 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
+      Hash: 1ebd4913fb4e4fbcdb44a82cc56f65ae
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameAudioManager
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -748,4 +747,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: D:/games/crowd-bomber-mania/Crowd Bomber Mania/Builds/1-5-20.aab
+  playerPath: D:/games/crowd-bomber-mania/Crowd Bomber Mania/Builds/monster_bomber_beta_4.apk

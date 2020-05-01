@@ -22,6 +22,7 @@
           <e p="Cannon.cs" t="Include" />
           <e p="CanonBall.cs" t="Include" />
           <e p="CashManager.cs" t="Include" />
+          <e p="GameAudioManager.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="GameProgressManager.cs" t="Include" />
           <e p="InfectedDeathBar.cs" t="Include" />
