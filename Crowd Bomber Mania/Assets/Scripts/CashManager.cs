@@ -1,4 +1,7 @@
-﻿using TMPro;
+﻿using System;
+using System.Net.NetworkInformation;
+using System.Security.Cryptography;
+using TMPro;
 using UnityEngine;
 
 public class CashManager : MonoBehaviour
@@ -11,7 +14,7 @@ public class CashManager : MonoBehaviour
     public AudioSource cashRemoveSound;
     public AudioSource notEnoughCashSound;
     
-    private static int _cash;
+    private static ulong _cash ;
 
     private static CashManager _cashManager;
 
@@ -23,28 +26,29 @@ public class CashManager : MonoBehaviour
     }
 
     // -ve cash will be deducted
-    public static void AddOrRemoveCash(int cash)
+    public static void AddOrRemoveCash(ulong cash, bool remove = false)
     {
-        _cash += cash;
         SetPlayerCashToPref();
-        _cashManager.UpdateUi();
-        if (cash > 0)
+        if (!remove)
         {
+            _cash += cash;
             _cashManager.cashAddSound.Play();
             _cashManager.animator.Play("CashAddAnimation", -1, 0f);
         }
         else
         {
+            _cash -= cash;
             _cashManager.cashRemoveSound.Play();
             _cashManager.animator.Play("CashDeductAnimation", -1, 0f);
         }
+        _cashManager.UpdateUi();
     }
 
     private static void GetPlayerCashFromPref()
     {
         if (PlayerPrefs.HasKey("PlayerCash"))
         {
-            _cash = PlayerPrefs.GetInt("PlayerCash");
+            _cash = Convert.ToUInt64(PlayerPrefs.GetString("PlayerCash"));
         }
         else
         {
@@ -54,16 +58,17 @@ public class CashManager : MonoBehaviour
 
     private static void SetPlayerCashToPref()
     {
-        PlayerPrefs.SetInt("PlayerCash", _cash);
+        PlayerPrefs.SetString("PlayerCash", "" + _cash);
     }
-    
-    public static bool MakePurchase(int cost)
+
+    public static bool MakePurchase(ulong cost)
     {
+        
         var purchaseFlag = false;
 
         if (_cash >= cost)
         {
-            AddOrRemoveCash(-cost);
+            AddOrRemoveCash(cost, true);
             purchaseFlag = true;
         }
 
@@ -79,19 +84,75 @@ public class CashManager : MonoBehaviour
 
     private void UpdateUi()
     {
-        cashText.text = GetCashIn_kmb(_cash) + " $";
+        cashText.text = GetCashDisplay(_cash);
     }
-
-    public static string GetCashIn_kmb(int cash)
-    {
-        if (cash > 1000000) return ((int) (cash / 10000)).ToString("F") + "B";
-        if (cash > 100000) return ((int)(cash / 10000)).ToString("F") + "M";
-        if (cash > 10000) return ((int)(cash / 1000)).ToString("F") + "K";
-        return cash.ToString();
-    }
-
-    public static int GetCash()
+    public static ulong GetCash()
     {
         return _cash;
+    }
+
+    public static string GetCashDisplay(ulong cash)
+    {
+        var displayCash = "";
+        var numberOfDigitsInCash = cash > 0 ? Math.Ceiling(Math.Log10(cash)): 0;
+        switch (numberOfDigitsInCash)
+        {
+            case 0:
+                displayCash = "" + cash;
+                break;
+            case 1:
+                displayCash = "" + cash;
+                break;
+            case 2:
+                displayCash = "" + cash;
+                break;
+            case 3:
+                displayCash = "" + cash;
+                break;
+            case 4:
+                displayCash = "" + cash;
+                break;
+            case 5:
+                displayCash = "" + cash/1000 + "K";
+                break;
+            case 6:
+                displayCash = "" + cash/1000 + "K";
+                break;
+            case 7:
+                displayCash = "" + cash/1000 + "K";
+                break;
+            case 8:
+                displayCash = "" + cash/1000000 + "M";
+                break;
+            case 9:
+                displayCash = "" + cash/1000000 + "M";
+                break;
+            case 10:
+                displayCash = "" + cash/1000000 + "M";
+                break;
+            case 11:
+                displayCash = "" + cash/1000000000 + "B";
+                break;
+            case 12:
+                displayCash = "" + cash/1000000000 + "B";
+                break;
+            case 13:
+                displayCash = "" + cash/1000000000 + "B";
+                break;
+            case 14:
+                displayCash = "" + cash/1000000000000 + "T";
+                break;
+            case 15:
+                displayCash = "" + cash/1000000000000 + "T";
+                break;
+            case 16:
+                displayCash = "" + cash/1000000000000 + "T";
+                break;
+            default:
+                displayCash = "" + cash/1000000000000000 + "Z";
+                break;
+        }
+
+        return displayCash + " $";
     }
 }

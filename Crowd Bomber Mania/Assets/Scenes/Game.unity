@@ -954,12 +954,8 @@ MonoBehaviour:
   type: 1
   adIcon: {fileID: 51480278}
   powerUpCostText: {fileID: 1888213057}
-  powerUpCost: 0
-  powerUpInitialCosts: 0a000000320000000a000000
-  powerUpMultipliers:
-  - 1.5
-  - 1.8
-  - 1.6
+  powerUpCost: 50
+  powerUpMultiplier: 1.8
 --- !u!114 &43196585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8557,12 +8553,8 @@ MonoBehaviour:
   type: 0
   adIcon: {fileID: 654379480}
   powerUpCostText: {fileID: 696137010}
-  powerUpCost: 0
-  powerUpInitialCosts: 0a000000320000000a000000
-  powerUpMultipliers:
-  - 1.5
-  - 1.8
-  - 1.6
+  powerUpCost: 10
+  powerUpMultiplier: 1.5
 --- !u!4 &1649987275 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 459986, guid: 62724a8cd2495b14f930b7129c3bc47b,
@@ -9170,12 +9162,8 @@ MonoBehaviour:
   type: 2
   adIcon: {fileID: 782177871}
   powerUpCostText: {fileID: 307060023}
-  powerUpCost: 0
-  powerUpInitialCosts: 0a000000320000000a000000
-  powerUpMultipliers:
-  - 1.5
-  - 1.8
-  - 1.6
+  powerUpCost: 10
+  powerUpMultiplier: 1.6
 --- !u!114 &1784201300
 MonoBehaviour:
   m_ObjectHideFlags: 0

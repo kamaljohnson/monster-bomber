@@ -144,6 +144,11 @@ public class Cannon : MonoBehaviour
 
     public static void Reset()
     {
+        var cannonBalls = GameObject.FindGameObjectsWithTag("CannonBall");
+        foreach (var ball in cannonBalls)
+        {
+            Destroy(ball);
+        }
         GetCannonBallCountFromPref();
         _cannon._cannonBallsLeft = _cannon.cannonBallCount;
 

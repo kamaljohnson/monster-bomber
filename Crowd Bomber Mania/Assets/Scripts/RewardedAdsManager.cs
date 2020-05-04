@@ -28,7 +28,6 @@ public class RewardedAdsManager : MonoBehaviour, IUnityAdsListener {
     public static bool IsAdReady()
     {
         _adReady = Advertisement.IsReady (_rewardedAds.myPlacementId);
-        Debug.Log("ad ready: "+ _adReady);
         return _adReady;
     }
     

@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Object = UnityEngine.Object;
 
 public enum PersonTags
@@ -17,7 +19,7 @@ public class Person : MonoBehaviour
 
     public List<Object> listOfObjectsToBeCleanedAfterDeath;
 
-    private static int _personCash = 10;
+    private static ulong _personCash = 10;
     private const float PersonCashMultiplier = 0.5f;
 
     public InfectedDeathBar deathBar;
@@ -31,7 +33,7 @@ public class Person : MonoBehaviour
     
     private void Start()
     {
-        GetPersonCashFromPref();
+        LoadPersonCashFromPref();
         UpdatePersonModel();
     }
 
@@ -127,11 +129,11 @@ public class Person : MonoBehaviour
         }
     }
 
-    private static void GetPersonCashFromPref()
+    private static void LoadPersonCashFromPref()
     {
         if (PlayerPrefs.HasKey("PersonCash"))
         {
-            _personCash = PlayerPrefs.GetInt("PersonCash");
+            _personCash = Convert.ToUInt64(PlayerPrefs.GetString("PersonCash"));
         }
         else
         {
@@ -141,13 +143,12 @@ public class Person : MonoBehaviour
 
     private static void SetPersonCashToPref()
     {
-        PlayerPrefs.SetInt("PersonCash", _personCash);
+        PlayerPrefs.SetString("PersonCash", "" + _personCash);
     }
 
     public static void UpdatePersonCash()
     {
-        _personCash += (int) (_personCash * PersonCashMultiplier);
-
+        _personCash += (ulong) (_personCash * PersonCashMultiplier);
         SetPersonCashToPref();
     }
 

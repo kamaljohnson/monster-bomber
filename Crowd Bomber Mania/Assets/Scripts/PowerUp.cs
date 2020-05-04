@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using TMPro;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -19,11 +19,9 @@ public class PowerUp : MonoBehaviour
     public GameObject adIcon;
     public TMP_Text powerUpCostText;
 
-    public int powerUpCost;
+    public ulong powerUpCost;
 
-    public List<int> powerUpInitialCosts;
-
-    public List<float> powerUpMultipliers;
+    public float powerUpMultiplier;
 
     private bool _adSupport;
     private int adShowCount = 3;    
@@ -31,16 +29,16 @@ public class PowerUp : MonoBehaviour
     
     private void Start()
     {
-        powerUpCost = GetPriceOfPowerUpFromPref();
+        LoadPriceOfPowerUpFromPref();
         UpdateUi();
     }
 
     public void RequestPowerUpActivation()
     {        
-        var priceOfPowerUp = GetPriceOfPowerUpFromPref();
+        LoadPriceOfPowerUpFromPref();
         bool purchaseStatus;
         
-        purchaseStatus = _adSupport || CashManager.MakePurchase(priceOfPowerUp);
+        purchaseStatus = _adSupport || CashManager.MakePurchase(powerUpCost);
 
         if (_adSupport)
         {
@@ -52,7 +50,7 @@ public class PowerUp : MonoBehaviour
             ActivatePowerUp();
         }
     }
-    
+
     public void ActivatePowerUp()
     {
         switch (type)
@@ -73,25 +71,27 @@ public class PowerUp : MonoBehaviour
         UpdatePowerUpCost();
     }
 
-    private int GetPriceOfPowerUpFromPref()
+    private void LoadPriceOfPowerUpFromPref()
     {
-        if (!PlayerPrefs.HasKey(GetName(type) + "Cost"))
+        if (PlayerPrefs.HasKey("PowerUp" + GetName(type)))
         {
-            SetPowerUpCostToPref(powerUpInitialCosts[(int) type]);
+            powerUpCost = Convert.ToUInt64(PlayerPrefs.GetString("PowerUp" + GetName(type)));
         }
-        
-        return PlayerPrefs.GetInt(GetName(type) + "Cost");
+        else
+        {
+            SetPowerUpCostToPref();
+        }    
     }
 
-    private void SetPowerUpCostToPref(int cost)
+    private void SetPowerUpCostToPref()
     {
-        PlayerPrefs.SetInt(GetName(type) + "Cost", cost);
+        PlayerPrefs.SetString("PowerUp" + GetName(type), "" + powerUpCost);
     }
 
     private void UpdatePowerUpCost()
     {
-        powerUpCost = (int)(powerUpCost * powerUpMultipliers[(int)type]);
-        SetPowerUpCostToPref(powerUpCost);
+        powerUpCost = (ulong) (powerUpCost * powerUpMultiplier);
+        SetPowerUpCostToPref();
 
         if (CashManager.GetCash() < powerUpCost)
             _adSupport = true;
@@ -107,7 +107,7 @@ public class PowerUp : MonoBehaviour
 
     private void UpdateUi()
     {
-        powerUpCostText.text = CashManager.GetCashIn_kmb(powerUpCost) + " $";
+        powerUpCostText.text = CashManager.GetCashDisplay(powerUpCost);
 
         var adAvailable = RewardedAdsManager.IsAdReady();
         if (_adSupport && adAvailable)

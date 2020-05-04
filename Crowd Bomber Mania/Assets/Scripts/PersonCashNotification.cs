@@ -8,8 +8,8 @@ public class PersonCashNotification : MonoBehaviour
 
     public TMP_Text amountText;
 
-    public void SetCashAmount(int amount)
+    public void SetCashAmount(ulong amount)
     {
-        amountText.text = amount + " $";
+        amountText.text = CashManager.GetCashDisplay(amount);
     }
 }
