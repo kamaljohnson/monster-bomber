@@ -20,7 +20,7 @@ public class Person : MonoBehaviour
     public List<Object> listOfObjectsToBeCleanedAfterDeath;
 
     private static ulong _personCash = 10;
-    private const float PersonCashMultiplier = 0.5f;
+    private const float PersonCashMultiplier = 0.2f;
 
     public InfectedDeathBar deathBar;
 

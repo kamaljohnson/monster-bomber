@@ -11,17 +11,6 @@
             <e p="READ ME.txt" t="Include" />
           </e>
         </e>
-        <e p="BrokenVector" t="Include">
-          <e p="LowPolyFencePack" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="DoorController.cs" t="Include" />
-              <e p="DoorToggle.cs" t="Include" />
-            </e>
-          </e>
-          <e p="LowPolyTreePack" t="Include">
-            <e p="README.txt" t="Include" />
-          </e>
-        </e>
         <e p="Mobile Game GUI Vector Pack" t="Include">
           <e p="DEMO_Scripts" t="Include">
             <e p="DEMO_CreateWindowShareLink.cs" t="Include" />
