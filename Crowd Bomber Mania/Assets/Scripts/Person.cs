@@ -73,9 +73,11 @@ public class Person : MonoBehaviour
 // the collider is enabled if the person is infected
     public void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag(GetTag(PersonTags.Infected))) return;
+        if (other.CompareTag(GetTag(PersonTags.Infected)) || other.CompareTag("CannonBall"))
+        {
+            TriggerInfection();
+        };
         
-        TriggerInfection();
     }
     
     IEnumerator TriggerDeathTimer()
