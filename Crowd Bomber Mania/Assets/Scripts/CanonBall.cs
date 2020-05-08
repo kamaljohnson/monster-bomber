@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +18,7 @@ public class CanonBall : MonoBehaviour
 
     public Animator animator;
 
-    public Collider triggerCollider;
+    public Transform particleEffectTransform;
     
     public void Start()
     {
@@ -27,7 +28,7 @@ public class CanonBall : MonoBehaviour
     public void Update()
     {
         _destroyCheckerTimer += Time.deltaTime;
-        if (_destroyCheckerTimer >= 10)
+        if (_destroyCheckerTimer >= 10 && isCannonFalling)
         {
             cannonHitSound.Play();
             Destroy(gameObject);
@@ -44,26 +45,26 @@ public class CanonBall : MonoBehaviour
         if (other.collider.CompareTag("Ground"))
         {
             cannonHitSound.Play();
-            Destroy(gameObject.GetComponent<Rigidbody>());
+            rb.constraints = RigidbodyConstraints.FreezeAll;
             isCannonFalling = false;
             
             animator.Play("CannonTimerAnimation", -1, 0f);
-            StartCoroutine(TriggerCannonActivation());
+            particleEffectTransform.eulerAngles = new Vector3(0, 1, 0);
+            StartCoroutine(TriggerCannonDeactivation());
         }
     }
-    
-    IEnumerator TriggerCannonActivation()
-    {
-        yield return new WaitForSeconds(2.5f);
- 
-        // Code to execute after the delay
-        ActivateCannon();
-    }
 
-    private void ActivateCannon()
+    private IEnumerator TriggerCannonDeactivation()
     {
-        triggerCollider.enabled = true;
-        Destroy(triggerCollider, 1f);
+        yield return new WaitForSeconds(6);
+        
+        DeactivateCannon();
+    }
+    
+    private void DeactivateCannon()
+    {
+        transform.GetChild(0).tag = "UsedCannonBall";
+        GameManager.ReportCannonBallUsed();
     }
     
     private void OnDestroy()
