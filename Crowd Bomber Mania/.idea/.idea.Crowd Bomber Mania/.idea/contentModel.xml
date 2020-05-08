@@ -17,6 +17,16 @@
             <e p="README.txt" t="Include" />
           </e>
         </e>
+        <e p="Mobile Game GUI Vector Pack" t="Include">
+          <e p="DEMO_Scripts" t="Include">
+            <e p="DEMO_CreateWindowShareLink.cs" t="Include" />
+            <e p="DEMO_DestroyWindow.cs" t="Include" />
+            <e p="DEMO_GraphicsManager.cs" t="Include" />
+            <e p="DEMO_NavigationInformation.cs" t="Include" />
+            <e p="DEMO_SceneNavigation.cs" t="Include" />
+            <e p="DEMO_SoundManager.cs" t="Include" />
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="BillBoardScript.cs" t="Include" />
           <e p="Cannon.cs" t="Include" />

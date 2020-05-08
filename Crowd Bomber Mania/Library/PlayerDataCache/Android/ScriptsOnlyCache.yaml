@@ -31,13 +31,20 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.Advertisements.dll:
+    - UnityEngine.Advertisements.Placeholder
+    - UnityEngine.Advertisements.Platform.Editor.BannerPlaceholder
+    UnityEngine.Monetization.dll:
+    - UnityEngine.Monetization.Placeholder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -757,6 +764,42 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DEMO_DestroyWindow
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DEMO_SoundManager
+  - hash:
+      serializedVersion: 2
+      Hash: bef6f2b6414a12c77b4da23cd6242a3a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DEMO_CreateWindowShareLink
+  - hash:
+      serializedVersion: 2
+      Hash: a7b4d95ee905fc6c8aad848d6c364993
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DEMO_NavigationInformation
+  - hash:
+      serializedVersion: 2
+      Hash: 1ae042f5d07ae250c26eb82bb0e2f11b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DEMO_SceneNavigation
+  - hash:
+      serializedVersion: 2
+      Hash: 3e6ce26cb6dd5b5ebef39f8649b129a0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DEMO_GraphicsManager
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
