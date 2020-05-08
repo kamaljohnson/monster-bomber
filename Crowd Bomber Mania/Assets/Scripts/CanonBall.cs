@@ -44,9 +44,10 @@ public class CanonBall : MonoBehaviour
     {
         if (other.collider.CompareTag("Ground"))
         {
-            cannonHitSound.Play();
-            rb.constraints = RigidbodyConstraints.FreezeAll;
             isCannonFalling = false;
+            
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+            cannonHitSound.Play();
             
             animator.Play("CannonTimerAnimation", -1, 0f);
             particleEffectTransform.eulerAngles = new Vector3(0, 1, 0);

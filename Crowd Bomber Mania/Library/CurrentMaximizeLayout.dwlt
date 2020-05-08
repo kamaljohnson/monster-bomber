@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 392}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 1
-  controlID: 137687
+  controlID: 137983
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 392}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 137688
+  controlID: 137984
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -199,7 +199,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0ca695ff28a695ff04a795ff56d996ff8ed996ff4ee196ff86e196fff6e396ff2ee496fff2e796ff2ae896ff3ec898ffcce298ffd0e298ffeefd98ff0cfe98ff34ff98ff2adb99ff7a1e9aff881e9aff4c54c7ff5a54c7ff0c0cddff7227ddfffe2cddff80b0dfffe0cfe6ffce6bf3ff5afbfffff4390000123a00001a3a0000b83a0000263b0000543b00009a3b0000e63b0000fc3b0000083c0000120a0100a80f0100b40f0100cc0f0100da0f0100001001005410010080100100a01001003c11010056110100821101008e110100fa960200fe970200b49802003a99020046990200c2990200d899020030050300bc050300d80503005e06030076060300
+      m_ExpandedIDs: 1aab93ff36ab93ff6aac93ff0ca695ff28a695ff04a795ff56d996ff8ed996ff4ee196ff86e196fff6e396ff2ee496fff2e796ff2ae896ff3ec898ffcce298ffd0e298ffeefd98ff0cfe98ff34ff98ff2adb99ff7a1e9aff881e9aff4c54c7ff5a54c7ff0c0cddff7227ddfffe2cddff80b0dfffe0cfe6ffce6bf3ff5afbfffff4390000123a00001a3a0000b83a0000263b0000543b00009a3b0000e63b0000fc3b0000083c0000120a0100a80f0100b40f0100cc0f0100da0f0100001001005410010080100100a01001003c11010056110100821101008e110100fa960200fe970200b49802003a99020046990200c2990200d899020030050300bc050300d80503005e06030076060300ec2d03008c2e0300902e0300
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 392}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 137641
+  controlID: 137956
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 121}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 137608
+  controlID: 137957
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -626,9 +626,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -28.808846, y: 49.41037, z: -8.061039}
+    m_Target: {x: 184.94235, y: 118.829346, z: 131.66998}
     speed: 2
-    m_Value: {x: -28.808846, y: 49.41037, z: -8.061039}
+    m_Value: {x: 184.94235, y: 118.829346, z: 131.66998}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -675,13 +675,13 @@ MonoBehaviour:
     m_GridAxis: 0
     m_gridOpacity: 1
   m_Rotation:
-    m_Target: {x: 0.024780931, y: 0.09582294, z: -0.0023858414, w: 0.99508816}
+    m_Target: {x: 0.2671556, y: 0.11386388, z: -0.031807296, w: 0.95637566}
     speed: 2
-    m_Value: {x: 0.024780905, y: 0.09582283, z: -0.002385839, w: 0.9950871}
+    m_Value: {x: 0.26715517, y: 0.1138637, z: -0.031807248, w: 0.95637417}
   m_Size:
-    m_Target: 806.6116
+    m_Target: 583.79456
     speed: 2
-    m_Value: 806.6116
+    m_Value: 583.79456
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -800,20 +800,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 63
   m_LastFolders:
-  - Assets/Materials
+  - Assets
   m_LastFoldersGridSize: 63
   m_LastProjectPath: D:\games\crowd-bomber-mania\Crowd Bomber Mania
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 149}
-    m_SelectedIDs: 7c4c0000
-    m_LastClickedID: 19580
+    scrollPos: {x: 0, y: 143}
+    m_SelectedIDs: 48400000
+    m_LastClickedID: 16456
     m_ExpandedIDs: 00000000484000004a4000004c400000344c00006a4c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -867,8 +867,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: b4c794ff
-    m_LastClickedInstanceID: -7026764
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300003245000058450000d430000014340000782f0000fe320000ae3b00007eb3010064b3010058b3010086b3010068b3010000000000
     m_RenameOverlay:
@@ -1540,7 +1540,7 @@ MonoBehaviour:
     m_CachedPref: 257
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -7026764
+  m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
   m_AssetGUID: 
   m_InstanceID: 0
