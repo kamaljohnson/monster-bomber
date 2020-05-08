@@ -18,7 +18,7 @@ public class PersonAnimationController : MonoBehaviour
 
     public void PlayAnimation(AnimationType type)
     {
-        animator.Play(GetAnimationNameForType(type), -1, 0f);
+        animator.Play(GetAnimationNameForType(type), 0, 0f);
     }
 
     private string GetAnimationNameForType(AnimationType type)

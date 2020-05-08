@@ -20,7 +20,7 @@ public class Person : MonoBehaviour
     public List<Object> listOfObjectsToBeCleanedAfterDeath;
 
     private static ulong _personCash = 10;
-    private const float PersonCashMultiplier = 0.5f;
+    private const float PersonCashMultiplier = 0.2f;
 
     public InfectedDeathBar deathBar;
 
@@ -73,9 +73,11 @@ public class Person : MonoBehaviour
 // the collider is enabled if the person is infected
     public void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag(GetTag(PersonTags.Infected))) return;
+        if (other.CompareTag(GetTag(PersonTags.Infected)) || other.CompareTag("CannonBall"))
+        {
+            TriggerInfection();
+        };
         
-        TriggerInfection();
     }
     
     IEnumerator TriggerDeathTimer()

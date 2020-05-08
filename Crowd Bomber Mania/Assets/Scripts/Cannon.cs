@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -118,6 +119,7 @@ public class Cannon : MonoBehaviour
         
         cannonballInstance.transform.position = shootTransform.position;
         cannonballInstance.velocity = velocity;
+        // Apply the rotation to the rigid body
     }
 
     private Vector3 BallisticVelocity(Vector3 destination, float angle)
@@ -145,7 +147,12 @@ public class Cannon : MonoBehaviour
     public static void Reset()
     {
         var cannonBalls = GameObject.FindGameObjectsWithTag("CannonBall");
+        var usedCannonBalls = GameObject.FindGameObjectsWithTag("UsedCannonBall");
         foreach (var ball in cannonBalls)
+        {
+            Destroy(ball);
+        }
+        foreach (var ball in usedCannonBalls)
         {
             Destroy(ball);
         }
