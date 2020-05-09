@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
 
     private static int _adCounter;
     
+    private static bool _notifiedAllMonstersEffected;
+    
     public void Start()
     {
         _gameManager = this;
@@ -98,12 +100,22 @@ public class GameManager : MonoBehaviour
 
     private void CheckGameEnding()
     {
+        
         var numberOfDeadPersons = GameObject.FindGameObjectsWithTag(Person.GetTag(PersonTags.Dead)).Length;
+        var numberOfInfectedPersons = GameObject.FindGameObjectsWithTag(Person.GetTag(PersonTags.Infected)).Length;
+
         if (numberOfDeadPersons == PersonSpawner.GetPersonCount())
         {    
             GameWon();
             return;
         }
+
+        if (numberOfDeadPersons + numberOfInfectedPersons == PersonSpawner.GetPersonCount() && !_notifiedAllMonstersEffected)
+        {
+            NotificationManager.Notify(NotificationType.AllMonstersInfected);
+            _notifiedAllMonstersEffected = true;
+        }
+ 
         if (Cannon.CannonBallsRemaining() != 0) return;
         
         var cannonBallsInAir = GameObject.FindGameObjectsWithTag("CannonBall");
@@ -161,5 +173,7 @@ public class GameManager : MonoBehaviour
         PersonSpawner.Reset();
         GameProgressManager.Reset();
         PowerUp.Reset();
+
+        _notifiedAllMonstersEffected = false;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -25,8 +26,11 @@ public class GameProgressManager : MonoBehaviour
 
     private static GameProgressState _progressState;
 
+    private static bool _notifiedProgressMax;
+    
     public void Start()
     {
+        _notifiedProgressMax = false;
         _gameProgressManager = this;
         GetProgressPerCashFromPref();
     }
@@ -39,6 +43,11 @@ public class GameProgressManager : MonoBehaviour
         
         if (_gameProgressManager.gameProgress > _gameProgressManager.progressSlider.maxValue)
         {
+            if (!_notifiedProgressMax)
+            {
+                NotificationManager.Notify(NotificationType.LevelUp);
+                _notifiedProgressMax = true;
+            }
             _progressState = GameProgressState.Complete;
         }
         else
@@ -83,6 +92,7 @@ public class GameProgressManager : MonoBehaviour
         _gameProgressManager.gameProgress = 0;
         _progressState = GameProgressState.NotComplete;
         _gameProgressManager.UpdateUi();
+        _notifiedProgressMax = false;
     }
 
     private void UpdateUi()

@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 public enum NotificationType
 {
     PopulationPowerUp,
     ExtraCannonPowerUp,
     SpeedPowerUp,
-    NotEnoughCash
+    NotEnoughCash,
+    LevelUp,
+    AllMonstersInfected
 }
 
 public class NotificationManager : MonoBehaviour
@@ -23,6 +20,8 @@ public class NotificationManager : MonoBehaviour
     public Sprite extraCannonPowerUpImage;
     public Sprite speedPowerUpImage;
     public Sprite notEnoughCashImage;
+    public Sprite levelUpImage;
+    public Sprite allMonstersInfectedImage;
 
     private static NotificationManager _notificationManager;
 
@@ -63,6 +62,10 @@ public class NotificationManager : MonoBehaviour
                 return "Power Up Activated";
             case NotificationType.NotEnoughCash:
                 return "Not Enough Cash";
+            case NotificationType.LevelUp:
+                return "Level Up";
+            case NotificationType.AllMonstersInfected:
+                return "All Monsters Infected";
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
         }
@@ -80,6 +83,10 @@ public class NotificationManager : MonoBehaviour
                 return speedPowerUpImage;
             case NotificationType.NotEnoughCash:
                 return notEnoughCashImage;
+            case NotificationType.LevelUp:
+                return levelUpImage;
+            case NotificationType.AllMonstersInfected:
+                return allMonstersInfectedImage;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
         }

@@ -12,6 +12,8 @@ ScriptsOnlyBuild:
     - GameProgressManager
     - InfectedDeathBar
     - LevelManager
+    - NotificationManager
+    - NotificationUnit
     - Person
     - PersonAnimationController
     - PersonCashNotification
@@ -171,6 +173,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 87498}
     - Class: 114
       Script: {instanceID: 137162}
+    - Class: 114
+      Script: {instanceID: 290436}
+    - Class: 114
+      Script: {instanceID: 291100}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -824,6 +830,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CannonFuzzScript
+  - hash:
+      serializedVersion: 2
+      Hash: 24c355a734f38cc0995ffe2fa2e520e7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NotificationManager
+  - hash:
+      serializedVersion: 2
+      Hash: a2df145203dd95d1eca447c606ce9f9e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NotificationUnit
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
