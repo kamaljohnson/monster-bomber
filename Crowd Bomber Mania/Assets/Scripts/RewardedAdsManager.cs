@@ -38,6 +38,8 @@ public class RewardedAdsManager : MonoBehaviour, IUnityAdsListener {
     public void OnUnityAdsReady (string placementId) {
         if (string.CompareOrdinal(placementId, myPlacementId) == 0)
         {
+            // TODO: to be removed
+            NotificationManager.Notify(NotificationType.LevelUp);
             PowerUp.adAvailable = true;
             _adReady = true;
         }

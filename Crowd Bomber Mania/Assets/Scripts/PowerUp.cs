@@ -44,6 +44,7 @@ public class PowerUp : MonoBehaviour
         
         if (_adSupport)
         {
+            adAvailable = false;
             currentRewardedVideoRequestedPowerUp = this;
             RewardedAdsManager.ShowRewardedVideo();
             return;
@@ -109,11 +110,10 @@ public class PowerUp : MonoBehaviour
             _adSupport = false;
         }
         
-        Debug.Log("_adSupport: " + _adSupport);
-
         _adCounter++;
         if (_adCounter >= adShowCount || _adSupport)
         {
+            _adSupport = true;
             _adCounter = 0;
         }
         
@@ -125,7 +125,7 @@ public class PowerUp : MonoBehaviour
         powerUpCostText.text = CashManager.GetCashDisplay(powerUpCost);
         
         if (_adSupport && adAvailable)
-        {    
+        {
             adIcon.gameObject.SetActive(true);
             powerUpCostText.gameObject.SetActive(false);
         }

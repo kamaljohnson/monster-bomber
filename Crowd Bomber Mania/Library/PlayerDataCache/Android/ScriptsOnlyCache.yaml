@@ -35,10 +35,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -47,8 +45,6 @@ ScriptsOnlyBuild:
     UnityEngine.Advertisements.dll:
     - UnityEngine.Advertisements.Placeholder
     - UnityEngine.Advertisements.Platform.Editor.BannerPlaceholder
-    UnityEngine.Monetization.dll:
-    - UnityEngine.Monetization.Placeholder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -110,73 +106,73 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11772}
+      Script: {instanceID: 11776}
     - Class: 114
-      Script: {instanceID: 11784}
+      Script: {instanceID: 11790}
     - Class: 114
-      Script: {instanceID: 11824}
+      Script: {instanceID: 11832}
     - Class: 114
-      Script: {instanceID: 11888}
+      Script: {instanceID: 11896}
     - Class: 114
-      Script: {instanceID: 12020}
+      Script: {instanceID: 12032}
     - Class: 114
-      Script: {instanceID: 12060}
+      Script: {instanceID: 12072}
     - Class: 114
-      Script: {instanceID: 12108}
+      Script: {instanceID: 12120}
     - Class: 114
-      Script: {instanceID: 12188}
+      Script: {instanceID: 12202}
     - Class: 114
-      Script: {instanceID: 12240}
+      Script: {instanceID: 12256}
     - Class: 114
-      Script: {instanceID: 12276}
+      Script: {instanceID: 12292}
     - Class: 114
-      Script: {instanceID: 12380}
+      Script: {instanceID: 12398}
     - Class: 114
-      Script: {instanceID: 12442}
+      Script: {instanceID: 12464}
     - Class: 114
-      Script: {instanceID: 12512}
+      Script: {instanceID: 12536}
     - Class: 114
-      Script: {instanceID: 12540}
+      Script: {instanceID: 12564}
     - Class: 114
-      Script: {instanceID: 12544}
+      Script: {instanceID: 12568}
     - Class: 114
-      Script: {instanceID: 12550}
+      Script: {instanceID: 12574}
     - Class: 114
-      Script: {instanceID: 12668}
+      Script: {instanceID: 12698}
     - Class: 114
-      Script: {instanceID: 12670}
+      Script: {instanceID: 12700}
     - Class: 114
-      Script: {instanceID: 12770}
+      Script: {instanceID: 12704}
     - Class: 114
-      Script: {instanceID: 13038}
+      Script: {instanceID: 12802}
     - Class: 114
-      Script: {instanceID: 13306}
+      Script: {instanceID: 12916}
     - Class: 114
-      Script: {instanceID: 13322}
+      Script: {instanceID: 13078}
     - Class: 114
-      Script: {instanceID: 13562}
+      Script: {instanceID: 13352}
     - Class: 114
-      Script: {instanceID: 13634}
+      Script: {instanceID: 13368}
     - Class: 114
-      Script: {instanceID: 13760}
+      Script: {instanceID: 13458}
     - Class: 114
-      Script: {instanceID: 13834}
+      Script: {instanceID: 13622}
     - Class: 114
-      Script: {instanceID: 13862}
+      Script: {instanceID: 13694}
     - Class: 114
-      Script: {instanceID: 13966}
+      Script: {instanceID: 13822}
     - Class: 114
-      Script: {instanceID: 14074}
+      Script: {instanceID: 13904}
     - Class: 114
-      Script: {instanceID: 14116}
+      Script: {instanceID: 13932}
     - Class: 114
-      Script: {instanceID: 87498}
+      Script: {instanceID: 13954}
     - Class: 114
-      Script: {instanceID: 137162}
+      Script: {instanceID: 14038}
     - Class: 114
-      Script: {instanceID: 290436}
+      Script: {instanceID: 14146}
     - Class: 114
-      Script: {instanceID: 291100}
+      Script: {instanceID: 14188}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -514,6 +510,12 @@ ScriptsOnlyBuild:
     className: RewardedAdsManager
   - hash:
       serializedVersion: 2
+      Hash: 901b3a6ff8e74ed4b3e6bee88bad9cbc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CannonFuzzScript
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -542,6 +544,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 901b3a6ff8e74ed4b3e6bee88bad9cbc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CannonBeepScript
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -634,6 +642,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: a2df145203dd95d1eca447c606ce9f9e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NotificationUnit
+  - hash:
+      serializedVersion: 2
       Hash: 2e0617456ef7995d079420da481211e4
     assemblyName: Assembly-CSharp.dll
     namespaceName: BrokenVector.LowPolyFencePack
@@ -704,6 +718,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PowerUp
+  - hash:
+      serializedVersion: 2
+      Hash: 2f8825d99a55f14190fe85573ad8cb93
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NotificationManager
   - hash:
       serializedVersion: 2
       Hash: a01d7cd1372d550f912f7121e6ebe739
@@ -818,30 +838,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 901b3a6ff8e74ed4b3e6bee88bad9cbc
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CannonBeepScript
-  - hash:
-      serializedVersion: 2
-      Hash: 901b3a6ff8e74ed4b3e6bee88bad9cbc
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CannonFuzzScript
-  - hash:
-      serializedVersion: 2
-      Hash: 2f8825d99a55f14190fe85573ad8cb93
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: NotificationManager
-  - hash:
-      serializedVersion: 2
-      Hash: a2df145203dd95d1eca447c606ce9f9e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: NotificationUnit
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
