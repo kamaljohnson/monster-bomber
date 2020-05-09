@@ -28,7 +28,7 @@ public class CashManager : MonoBehaviour
     // -ve cash will be deducted
     public static void AddOrRemoveCash(ulong cash, bool remove = false)
     {
-        SetPlayerCashToPref();
+        GetPlayerCashFromPref();
         if (!remove)
         {
             _cash += cash;
@@ -41,6 +41,7 @@ public class CashManager : MonoBehaviour
             _cashManager.cashRemoveSound.Play();
             _cashManager.animator.Play("CashDeductAnimation", -1, 0f);
         }
+        SetPlayerCashToPref();
         _cashManager.UpdateUi();
     }
 
@@ -76,7 +77,7 @@ public class CashManager : MonoBehaviour
         {
             _cashManager.animator.Play("NotEnoughCashAnimation", -1, 0f);
             _cashManager.notEnoughCashSound.Play();
-            Debug.Log("Not enough cash");
+            NotificationManager.Notify(NotificationType.NotEnoughCash);
         }
 
         return purchaseFlag;

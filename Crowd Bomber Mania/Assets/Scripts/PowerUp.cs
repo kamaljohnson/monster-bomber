@@ -42,13 +42,14 @@ public class PowerUp : MonoBehaviour
         LoadPriceOfPowerUpFromPref();
         bool purchaseStatus;
         
-        purchaseStatus = CashManager.MakePurchase(powerUpCost);
-
         if (_adSupport)
         {
             currentRewardedVideoRequestedPowerUp = this;
             RewardedAdsManager.ShowRewardedVideo();
+            return;
         }
+
+        purchaseStatus = CashManager.MakePurchase(powerUpCost);
         
         if (purchaseStatus)
         {
@@ -62,12 +63,15 @@ public class PowerUp : MonoBehaviour
         {
             case PowerUpType.PopulationGrowth:
                 PersonSpawner.SpawnExtraPersons(1);
+                NotificationManager.Notify(NotificationType.PopulationPowerUp);
                 break;
             case PowerUpType.ExtraCannon:
                 FindObjectOfType<Cannon>().AddExtraCannonBall(1);
+                NotificationManager.Notify(NotificationType.ExtraCannonPowerUp);
                 break;
             case PowerUpType.SpeedIncrease:
                 PersonMovementController.UpdatePersonSpeed();
+                NotificationManager.Notify(NotificationType.SpeedPowerUp);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
