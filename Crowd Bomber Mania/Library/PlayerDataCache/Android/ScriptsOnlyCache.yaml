@@ -832,7 +832,7 @@ ScriptsOnlyBuild:
     className: CannonFuzzScript
   - hash:
       serializedVersion: 2
-      Hash: 24c355a734f38cc0995ffe2fa2e520e7
+      Hash: 2f8825d99a55f14190fe85573ad8cb93
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NotificationManager

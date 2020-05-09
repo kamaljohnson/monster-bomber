@@ -30,7 +30,6 @@ public class CanonBall : MonoBehaviour
         _destroyCheckerTimer += Time.deltaTime;
         if (_destroyCheckerTimer >= 10 && isCannonFalling)
         {
-            cannonHitSound.Play();
             Destroy(gameObject);
         }
         
@@ -46,7 +45,7 @@ public class CanonBall : MonoBehaviour
         {
             isCannonFalling = false;
             
-            rb.constraints = RigidbodyConstraints.FreezeAll;
+            rb.isKinematic = true;
             cannonHitSound.Play();
             
             animator.Play("CannonTimerAnimation", -1, 0f);

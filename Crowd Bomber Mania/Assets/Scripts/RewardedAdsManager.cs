@@ -44,6 +44,7 @@ public class RewardedAdsManager : MonoBehaviour, IUnityAdsListener {
     }
 
     public void OnUnityAdsDidFinish (string placementId, ShowResult showResult) {
+        if(placementId != myPlacementId) return;
         GameManager.CanPlay = true;
         // Define conditional logic for each ad completion status:
         if (showResult == ShowResult.Finished) {

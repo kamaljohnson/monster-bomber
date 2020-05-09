@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 2888154953746705773}
   - component: {fileID: 2888154953746705772}
   - component: {fileID: 2888154953746705775}
+  - component: {fileID: 2407116402438456200}
   m_Layer: 8
   m_Name: Person
   m_TagString: Healthy Person
@@ -271,6 +272,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!95 &2407116402438456200
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2888154953746705774}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f66bf0838f441564b93cde1af35e8e24, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4209188094481059506
 GameObject:
   m_ObjectHideFlags: 0

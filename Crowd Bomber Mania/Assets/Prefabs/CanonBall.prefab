@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 2387286750485629117}
   m_LocalRotation: {x: 0.70710677, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.00000005463759, y: 0, z: 0.003415227}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 6738782422291819135}
   m_Father: {fileID: 6437247045988601620}
@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 5955522467421227633}
   m_Layer: 8
   m_Name: CanonBall
-  m_TagString: Untagged
+  m_TagString: CannonBallHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,8 +367,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6437247045988601619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 12.07, z: 0.28}
-  m_LocalScale: {x: 0.81514496, y: 0.81514496, z: 0.8151454}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3392063202478986684}
   m_Father: {fileID: 0}
@@ -386,7 +386,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.8500136
-  m_Center: {x: 0, y: 0, z: 1.4772685}
+  m_Center: {x: 0, y: 0, z: 0.88279605}
 --- !u!54 &6437247045988601621
 Rigidbody:
   m_ObjectHideFlags: 0

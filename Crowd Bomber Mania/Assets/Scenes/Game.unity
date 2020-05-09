@@ -1323,8 +1323,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -13.300049}
-  m_SizeDelta: {x: -207.7, y: -892.8}
+  m_AnchoredPosition: {x: 0, y: 70.7}
+  m_SizeDelta: {x: -207.70001, y: -1060.8386}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &137774592
 MonoBehaviour:
@@ -2565,7 +2565,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 5307570345dd9b040ac9e6632fe35f2a, type: 2}
-  - {fileID: 2100000, guid: 63f9d1073f8d1d948872bc72d891d9f0, type: 2}
+  - {fileID: 2100000, guid: f666a5ed1ed586846b3a61c2607dce05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4183,7 +4183,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: NaN, y: 1e-45, z: 7e-44, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 7.2257e-41, w: 5.9e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -6850,6 +6850,9 @@ MonoBehaviour:
     type: 3}
   speedPowerUpImage: {fileID: 21300000, guid: 41aef3e36b978e343839b502a98b69fa, type: 3}
   notEnoughCashImage: {fileID: 21300000, guid: f0958f5afeba5e242a8c06a8d431a3da, type: 3}
+  levelUpImage: {fileID: 21300000, guid: 9c0556316c8de4f42a1f3b3f852fda62, type: 3}
+  allMonstersInfectedImage: {fileID: 21300000, guid: 963e73b46a627b24a8caa95ed52bccdf,
+    type: 3}
   notificationUnit: {fileID: 3648359255474333229, guid: ff93b98ef33c76041ae392e8b5356745,
     type: 3}
 --- !u!222 &1564882576
@@ -6893,7 +6896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPlacementId: rewardedVideo
   gameId: 3580709
-  testMode: 1
+  testMode: 0
 --- !u!114 &1599056074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6908,7 +6911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placementId: video
   gameId: 3580709
-  testMode: 1
+  testMode: 0
 --- !u!4 &1599056075
 Transform:
   m_ObjectHideFlags: 0
@@ -6937,7 +6940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bannerPlacement: bottomBanner
   gameId: 3580709
-  testMode: 1
+  testMode: 0
 --- !u!1001 &1606358624
 PrefabInstance:
   m_ObjectHideFlags: 0

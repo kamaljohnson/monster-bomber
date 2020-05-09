@@ -146,13 +146,8 @@ public class Cannon : MonoBehaviour
 
     public static void Reset()
     {
-        var cannonBalls = GameObject.FindGameObjectsWithTag("CannonBall");
-        var usedCannonBalls = GameObject.FindGameObjectsWithTag("UsedCannonBall");
+        var cannonBalls = GameObject.FindGameObjectsWithTag("CannonBallHolder");
         foreach (var ball in cannonBalls)
-        {
-            Destroy(ball);
-        }
-        foreach (var ball in usedCannonBalls)
         {
             Destroy(ball);
         }

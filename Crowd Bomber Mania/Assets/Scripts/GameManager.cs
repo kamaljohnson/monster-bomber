@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     }
     
     public static void GameWon()
-    {
+    {        
         ShowAdIfCounter();
         GameState = GameState.GameWon;
         _gameManager.gameWonUi.SetActive(true);
@@ -83,9 +83,10 @@ public class GameManager : MonoBehaviour
     private static void ShowAdIfCounter()
     {
         _adCounter++;
-        if (_adCounter < 3) return;
-        UnityVideoAds.ShowAd();
+        if (_adCounter < 4) return;
         _adCounter = 0;
+        Debug.Log("request show ad");
+        UnityVideoAds.ShowAd();
     }
     
     public static void ReportPersonDead()
@@ -100,6 +101,7 @@ public class GameManager : MonoBehaviour
 
     private void CheckGameEnding()
     {
+        if(GameState != GameState.Playing) return;
         
         var numberOfDeadPersons = GameObject.FindGameObjectsWithTag(Person.GetTag(PersonTags.Dead)).Length;
         var numberOfInfectedPersons = GameObject.FindGameObjectsWithTag(Person.GetTag(PersonTags.Infected)).Length;
