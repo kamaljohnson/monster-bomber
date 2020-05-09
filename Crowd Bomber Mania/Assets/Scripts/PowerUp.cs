@@ -26,6 +26,10 @@ public class PowerUp : MonoBehaviour
     private bool _adSupport;
     private int adShowCount = 3;    
     private int _adCounter;
+
+    public static bool adAvailable;
+
+    public static PowerUp currentRewardedVideoRequestedPowerUp;
     
     private void Start()
     {
@@ -38,10 +42,11 @@ public class PowerUp : MonoBehaviour
         LoadPriceOfPowerUpFromPref();
         bool purchaseStatus;
         
-        purchaseStatus = _adSupport || CashManager.MakePurchase(powerUpCost);
+        purchaseStatus = CashManager.MakePurchase(powerUpCost);
 
         if (_adSupport)
         {
+            currentRewardedVideoRequestedPowerUp = this;
             RewardedAdsManager.ShowRewardedVideo();
         }
         
@@ -93,9 +98,15 @@ public class PowerUp : MonoBehaviour
         powerUpCost = (ulong) (powerUpCost * powerUpMultiplier);
         SetPowerUpCostToPref();
 
-        if (CashManager.GetCash() < powerUpCost)
+        if (CashManager.GetCash() < powerUpCost && !_adSupport)
             _adSupport = true;
+        else
+        {
+            _adSupport = false;
+        }
         
+        Debug.Log("_adSupport: " + _adSupport);
+
         _adCounter++;
         if (_adCounter >= adShowCount || _adSupport)
         {
@@ -108,8 +119,7 @@ public class PowerUp : MonoBehaviour
     private void UpdateUi()
     {
         powerUpCostText.text = CashManager.GetCashDisplay(powerUpCost);
-
-        var adAvailable = RewardedAdsManager.IsAdReady();
+        
         if (_adSupport && adAvailable)
         {    
             adIcon.gameObject.SetActive(true);
@@ -123,6 +133,15 @@ public class PowerUp : MonoBehaviour
         }
     }
 
+    public static void UpdateFreePowerUpStatus(bool rewardedVideoWatched)
+    {
+        if (rewardedVideoWatched)
+        {
+            currentRewardedVideoRequestedPowerUp.ActivatePowerUp();
+            currentRewardedVideoRequestedPowerUp = null;
+        }
+    }
+    
     private static string GetName(PowerUpType type)
     {
         switch (type)

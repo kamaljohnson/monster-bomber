@@ -31,10 +31,10 @@ public class GameManager : MonoBehaviour
     
     public void Start()
     {
+        _gameManager = this;
         Screen.orientation = ScreenOrientation.Portrait;
         _adCounter = 0;
         GameState = GameState.AtMenu;
-        _gameManager = this;
         GoToMenu();
     }
 

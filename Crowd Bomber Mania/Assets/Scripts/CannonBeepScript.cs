@@ -10,7 +10,6 @@ public class CannonBeepScript : MonoBehaviour
 
     public void OnEnable()
     {
-        Debug.Log("Beep");
         audio.Play(0);
     }
 }

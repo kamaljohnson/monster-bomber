@@ -4179,7 +4179,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: NaN, y: 1e-45, z: 7e-44, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -6819,9 +6819,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2c74f5fc992254a93e48aeb68dd1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPlacementId: 'rewardedVideo '
+  myPlacementId: rewardedVideo
   gameId: 3580709
-  testMode: 0
+  testMode: 1
 --- !u!114 &1599056074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6836,7 +6836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placementId: video
   gameId: 3580709
-  testMode: 0
+  testMode: 1
 --- !u!4 &1599056075
 Transform:
   m_ObjectHideFlags: 0
@@ -6865,7 +6865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bannerPlacement: bottomBanner
   gameId: 3580709
-  testMode: 0
+  testMode: 1
 --- !u!1001 &1606358624
 PrefabInstance:
   m_ObjectHideFlags: 0
