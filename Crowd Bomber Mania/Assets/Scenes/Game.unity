@@ -163,8 +163,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -177, y: -66.986}
-  m_SizeDelta: {x: 302.21503, y: 94.75907}
+  m_AnchoredPosition: {x: -198.4, y: -66.986}
+  m_SizeDelta: {x: 344.95135, y: 94.75907}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &32601138
 MonoBehaviour:
@@ -7252,7 +7252,7 @@ MonoBehaviour:
   adIcon: {fileID: 654379480}
   powerUpCostText: {fileID: 696137010}
   powerUpCost: 10
-  powerUpMultiplier: 1.2
+  powerUpMultiplier: 1.4
 --- !u!1 &1640622802
 GameObject:
   m_ObjectHideFlags: 0
@@ -8217,7 +8217,7 @@ MonoBehaviour:
   adIcon: {fileID: 782177871}
   powerUpCostText: {fileID: 307060023}
   powerUpCost: 10
-  powerUpMultiplier: 1.2
+  powerUpMultiplier: 1.4
 --- !u!114 &1784201300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8588,6 +8588,7 @@ GameObject:
   - component: {fileID: 1829734556}
   - component: {fileID: 1829734558}
   - component: {fileID: 1829734557}
+  - component: {fileID: 1829734559}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -8730,6 +8731,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829734555}
   m_CullTransparentMesh: 0
+--- !u!95 &1829734559
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829734555}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a971f2a3e7fc5f498fe7bfdf4978c59, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1888213055
 GameObject:
   m_ObjectHideFlags: 0
