@@ -167,7 +167,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.xborggames.monster_bomber
   buildNumber: {}
-  AndroidBundleVersionCode: 9
+  AndroidBundleVersionCode: 10
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -280,7 +280,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 88881c82a038ce640962795f6b94d115, type: 3}
+      m_Icon: {fileID: 2800000, guid: d4cda4c0930182741bd3ffdce9d015db, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
