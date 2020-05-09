@@ -845,4 +845,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: D:/games/crowd-bomber-mania/Crowd Bomber Mania/Builds/monster_bomber_beta_5.apk
+  playerPath: D:/games/crowd-bomber-mania/Crowd Bomber Mania/Builds/9-5-20.aab
