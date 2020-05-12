@@ -167,7 +167,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.xborggames.monster_bomber
   buildNumber: {}
-  AndroidBundleVersionCode: 10
+  AndroidBundleVersionCode: 11
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -761,6 +761,8 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Analytics: 1
+    Purchasing: 1
     UNet: 1
   luminIcon:
     m_Name: 

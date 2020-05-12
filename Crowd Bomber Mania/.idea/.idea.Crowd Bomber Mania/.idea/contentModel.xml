@@ -61,6 +61,7 @@
             <e p="UnlitVertexColour_Alpha.shader" t="Include" />
           </e>
         </e>
+        <e p="SplashScreen.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />

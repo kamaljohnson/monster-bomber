@@ -163,7 +163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -198.4, y: -66.986}
+  m_AnchoredPosition: {x: -198.4, y: -87.17006}
   m_SizeDelta: {x: 344.95135, y: 94.75907}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &32601138
@@ -1304,7 +1304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &137774591
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2805,6 +2805,7 @@ MonoBehaviour:
   cannonBallCount: 1
   reloadDelay: 0.2
   angle: 60
+  speed: 5
 --- !u!95 &511570342
 Animator:
   serializedVersion: 3
@@ -4916,9 +4917,9 @@ RectTransform:
   - {fileID: 1564882573}
   - {fileID: 1502287360}
   - {fileID: 103544300}
-  - {fileID: 1419707686}
-  - {fileID: 137774591}
   - {fileID: 1451817370}
+  - {fileID: 137774591}
+  - {fileID: 1419707686}
   m_Father: {fileID: 360161432}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6264,7 +6265,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 858442229}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6360,7 +6361,7 @@ RectTransform:
   - {fileID: 1718190997}
   - {fileID: 1499751452}
   m_Father: {fileID: 858442229}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}

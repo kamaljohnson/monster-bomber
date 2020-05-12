@@ -31,9 +31,13 @@ public class Cannon : MonoBehaviour
     private float angle = 45f;
 
     private bool _touched;
+
+    public float speed;
     
     private void Start()
     {
+        Physics.gravity = Physics.gravity * speed;
+        
         _cannon = this;
         _touched = false;
         
