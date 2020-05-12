@@ -11,8 +11,28 @@ public class UnityVideoAds : MonoBehaviour, IUnityAdsListener {
     private static UnityVideoAds _videoAd;
     private static bool _adReady;
 
+    public GameObject removeAdsUi;
+
+    private bool showAds;
+    
     void Awake ()
     {
+        
+        if (PlayerPrefs.HasKey("RemoveAdsActivated"))
+        {
+            showAds = PlayerPrefs.GetInt("RemoveAdsActivated") == 0;
+        }
+        else
+        {
+            showAds = true;
+            PlayerPrefs.SetInt("RemoveAdsActivated", 0);
+        }
+
+        if (!showAds)
+        {
+            return;
+        }
+        
         _videoAd = this;
         
         // Initialize the Ads listener and service:
@@ -24,7 +44,10 @@ public class UnityVideoAds : MonoBehaviour, IUnityAdsListener {
     // Implement a function for showing a rewarded video ad:
     public static void ShowAd ()
     {
-        Debug.Log("got response to show ad");
+        if (!_videoAd.showAds)
+        {
+            return;
+        }
         GameManager.CanPlay = false;
         Advertisement.Show (_videoAd.placementId);
     }
@@ -49,6 +72,8 @@ public class UnityVideoAds : MonoBehaviour, IUnityAdsListener {
         // Define conditional logic for each ad completion status:
         if (showResult == ShowResult.Finished) {
             Debug.Log("watched");
+            removeAdsUi.transform.GetChild(0).gameObject.SetActive(true);
+            removeAdsUi.GetComponent<Animator>().Play("RemoveAdsButtonSlideIn");
             // Reward the user for watching the ad to completion.
         } else if (showResult == ShowResult.Skipped) {
             Debug.Log("skipped");

@@ -4,6 +4,8 @@
     <e p="C:\Users\Kamal Johnson\.Rider2019.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Kamal Johnson\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Crowd Bomber Mania.1803945001.00" t="ExcludeRecursive" />
     <e p="D:\games\crowd-bomber-mania\Crowd Bomber Mania" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="AurynSky" t="Include">
@@ -32,6 +34,45 @@
             <e p="DEMO_SoundManager.cs" t="Include" />
           </e>
         </e>
+        <e p="Plugins" t="Include">
+          <e p="UDP" t="Include">
+            <e p="Editor" t="Include">
+              <e p="Analytics" t="Include">
+                <e p="Common.cs" t="Include" />
+                <e p="EditorAnalytcisApi.cs" t="Include" />
+                <e p="ProjectBuildEvent.cs" t="Include" />
+                <e p="ProjectOpenEvent.cs" t="Include" />
+                <e p="SdkImportEvent.cs" t="Include" />
+                <e p="WebRequestQueue.cs" t="Include" />
+              </e>
+              <e p="AppStoreModel.cs" t="Include" />
+              <e p="AppStoreOnboardApi.cs" t="Include" />
+              <e p="AppStoreSettingsEditor.cs" t="Include" />
+              <e p="AppStoreStyles.cs" t="Include" />
+              <e p="Utils.cs" t="Include" />
+            </e>
+          </e>
+          <e p="UnityPurchasing" t="Include">
+            <e p="Editor" t="Include">
+              <e p="IAPButtonEditor.cs" t="Include" />
+              <e p="IAPGeneratedCredentials.cs.template" t="Include" />
+            </e>
+            <e p="script" t="Include">
+              <e p="CodelessIAPStoreListener.cs" t="Include" />
+              <e p="ComboBox.cs" t="Include" />
+              <e p="Demo" t="Include">
+                <e p="DemoInventory.cs" t="Include" />
+              </e>
+              <e p="IAPButton.cs" t="Include" />
+              <e p="IAPConfigurationHelper.cs" t="Include" />
+              <e p="IAPDemo.cs" t="Include" />
+              <e p="IAPDemoProductUI.cs" t="Include" />
+              <e p="IAPListener.cs" t="Include" />
+              <e p="link.xml" t="Include" />
+              <e p="PurchasingCheck.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="BillBoardScript.cs" t="Include" />
           <e p="Cannon.cs" t="Include" />
@@ -42,6 +83,7 @@
           <e p="GameAudioManager.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="GameProgressManager.cs" t="Include" />
+          <e p="IAPManager.cs" t="Include" />
           <e p="InfectedDeathBar.cs" t="Include" />
           <e p="LevelManager.cs" t="Include" />
           <e p="NotificationManager.cs" t="Include" />
@@ -52,7 +94,10 @@
           <e p="PersonMovementController.cs" t="Include" />
           <e p="PersonSpawner.cs" t="Include" />
           <e p="PowerUp.cs" t="Include" />
+          <e p="PurchaseButton.cs" t="Include" />
+          <e p="RestorePurchases.cs" t="Include" />
           <e p="RewardedAdsManager.cs" t="Include" />
+          <e p="SplashScreen.cs" t="Include" />
           <e p="UnityBannerAds.cs" t="Include" />
           <e p="UnityVideoAds.cs" t="Include" />
         </e>
@@ -61,7 +106,6 @@
             <e p="UnlitVertexColour_Alpha.shader" t="Include" />
           </e>
         </e>
-        <e p="SplashScreen.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />

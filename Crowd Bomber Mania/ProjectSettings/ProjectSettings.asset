@@ -167,7 +167,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.xborggames.monster_bomber
   buildNumber: {}
-  AndroidBundleVersionCode: 11
+  AndroidBundleVersionCode: 12
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
