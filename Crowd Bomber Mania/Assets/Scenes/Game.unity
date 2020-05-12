@@ -7296,7 +7296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPlacementId: rewardedVideo
   gameId: 3580709
-  testMode: 1
+  testMode: 0
 --- !u!114 &1599056074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7311,7 +7311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placementId: video
   gameId: 3580709
-  testMode: 1
+  testMode: 0
   removeAdsUi: {fileID: 45055372}
 --- !u!4 &1599056075
 Transform:
@@ -7341,7 +7341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bannerPlacement: bottomBanner
   gameId: 3580709
-  testMode: 1
+  testMode: 0
   showAds: 0
 --- !u!1001 &1606358624
 PrefabInstance:

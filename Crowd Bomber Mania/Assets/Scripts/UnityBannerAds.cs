@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.Monetization;
@@ -12,6 +13,15 @@ public class UnityBannerAds : MonoBehaviour {
 
     void Start () {
 
+        if (PlayerPrefs.HasKey("NotifyRemoveAdsActivated"))
+        {
+            if (PlayerPrefs.GetInt("NotifyRemoveAdsActivated") == 0)
+            {
+                NotificationManager.Notify(NotificationType.RemoveAdsActivated);
+                PlayerPrefs.SetInt("NotifyRemoveAdsActivated", 1);
+            }
+        }
+        
         if (PlayerPrefs.HasKey("RemoveAdsActivated"))
         {
             showAds = PlayerPrefs.GetInt("RemoveAdsActivated") == 0;

@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Purchasing;
+using UnityEngine.SceneManagement;
 
 
 public class IAPManager : MonoBehaviour, IStoreListener
@@ -46,7 +47,9 @@ public class IAPManager : MonoBehaviour, IStoreListener
     {
         if (String.Equals(args.purchasedProduct.definition.id, removeAds, StringComparison.Ordinal))
         {
-            Debug.Log("Remove ads successful");
+            PlayerPrefs.SetInt("RemoveAdsActivated", 1);
+            PlayerPrefs.SetInt("NotifyRemoveAdsActivated", 0);
+            SceneManager.LoadScene("SplashScreen");
         }
         else
         {

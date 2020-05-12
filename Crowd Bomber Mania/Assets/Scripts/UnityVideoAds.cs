@@ -73,10 +73,12 @@ public class UnityVideoAds : MonoBehaviour, IUnityAdsListener {
         if (showResult == ShowResult.Finished) {
             Debug.Log("watched");
             removeAdsUi.transform.GetChild(0).gameObject.SetActive(true);
-            removeAdsUi.GetComponent<Animator>().Play("RemoveAdsButtonSlideIn");
+            removeAdsUi.GetComponent<Animator>().Play("RemoveAdsButtonSlideIn", -1, 0f);
             // Reward the user for watching the ad to completion.
         } else if (showResult == ShowResult.Skipped) {
             Debug.Log("skipped");
+            removeAdsUi.transform.GetChild(0).gameObject.SetActive(true);
+            removeAdsUi.GetComponent<Animator>().Play("RemoveAdsButtonSlideIn", -1, 0f);
             // Do not reward the user for skipping the ad.
         } else if (showResult == ShowResult.Failed) {
             Debug.Log("failed");

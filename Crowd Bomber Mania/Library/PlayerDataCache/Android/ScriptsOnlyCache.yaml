@@ -10,6 +10,7 @@ ScriptsOnlyBuild:
     - GameAudioManager
     - GameManager
     - GameProgressManager
+    - IAPManager
     - InfectedDeathBar
     - LevelManager
     - NotificationManager
@@ -20,6 +21,7 @@ ScriptsOnlyBuild:
     - PersonMovementController
     - PersonSpawner
     - PowerUp
+    - PurchaseButton
     - RewardedAdsManager
     - SplashScreen
     - UnityBannerAds
@@ -53,9 +55,17 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
+    - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
+    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/Game.unity:
     - Class: 1
@@ -166,6 +176,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14148}
     - Class: 114
       Script: {instanceID: 14190}
+    - Class: 114
+      Script: {instanceID: 39126}
+    - Class: 114
+      Script: {instanceID: 39148}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -232,11 +246,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11776}
     - Class: 114
+      Script: {instanceID: 11988}
+    - Class: 114
+      Script: {instanceID: 11990}
+    - Class: 114
       Script: {instanceID: 12032}
+    - Class: 114
+      Script: {instanceID: 12424}
     - Class: 114
       Script: {instanceID: 12536}
     - Class: 114
       Script: {instanceID: 12568}
+    - Class: 114
+      Script: {instanceID: 12800}
+    - Class: 114
+      Script: {instanceID: 13078}
+    - Class: 114
+      Script: {instanceID: 13194}
+    - Class: 114
+      Script: {instanceID: 13350}
     - Class: 114
       Script: {instanceID: 13354}
     - Class: 114
@@ -246,7 +274,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13906}
     - Class: 114
+      Script: {instanceID: 14132}
+    - Class: 114
       Script: {instanceID: 14148}
+    - Class: 114
+      Script: {instanceID: 14170}
     - Class: 114
       Script: {instanceID: 16602}
     - Class: 115
@@ -274,7 +306,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: c0f53b9f9da21c5872a89f27ce9b6acc
+      Hash: 043bd8513127bc5af46a4871ac96eb88
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UnityVideoAds
@@ -496,7 +528,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 905581c2a75f5b58dc26c82fe5a854bc
+      Hash: b4d633f5f2b49a281689d100ce0045a5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -754,7 +786,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: f17692a679ab90787bb921805126187b
+      Hash: 8270dfe19883da85fa80d02425bb4ad5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UnityBannerAds
@@ -902,8 +934,110 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SplashScreen
+  - hash:
+      serializedVersion: 2
+      Hash: cbe9b39ad540c96208a018691ff0bdfa
+    assemblyName: UDP.dll
+    namespaceName: UnityEngine.UDP
+    className: AppStoreSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UDP.dll
+    namespaceName: UnityEngine.UDP
+    className: MainThreadDispatcher
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UDP.dll
+    namespaceName: UnityEngine.UDP
+    className: UdpGameManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Stores.dll
+    namespaceName: UnityEngine.Purchasing
+    className: AsyncWebUtil
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Stores.dll
+    namespaceName: UnityEngine.Purchasing
+    className: MoolahStoreImpl
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Stores.dll
+    namespaceName: UnityEngine.Purchasing.Extension
+    className: UnityUtil
+  - hash:
+      serializedVersion: 2
+      Hash: cd0ecdca0166232906c6f2df9dddc3d3
+    assemblyName: Editor.dll
+    namespaceName: UnityEditor.Purchasing
+    className: ObfuscatorWindow
+  - hash:
+      serializedVersion: 2
+      Hash: cd0ecdca0166232906c6f2df9dddc3d3
+    assemblyName: Editor.dll
+    namespaceName: UnityEditor.Purchasing
+    className: ProductCatalogEditor
+  - hash:
+      serializedVersion: 2
+      Hash: cd0ecdca0166232906c6f2df9dddc3d3
+    assemblyName: Editor.dll
+    namespaceName: UnityEditor.Purchasing
+    className: RichEditorWindow
+  - hash:
+      serializedVersion: 2
+      Hash: ebd0fcfecda45cfd91320c470f790625
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: 
+    className: IAPDemoProductUI
+  - hash:
+      serializedVersion: 2
+      Hash: 30eb564bd7e3b65ae966828be9e631a8
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: UnityEngine.Purchasing
+    className: IAPButton
+  - hash:
+      serializedVersion: 2
+      Hash: 06fe0c6f1328047d1063ec79291e7f8a
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: UnityEngine.Purchasing
+    className: IAPListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: UnityEngine.Purchasing
+    className: DemoInventory
+  - hash:
+      serializedVersion: 2
+      Hash: 08a4dc90eb8d405328ffd2b674587aba
+    assemblyName: Assembly-CSharp-firstpass.dll
+    namespaceName: 
+    className: IAPDemo
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RestorePurchases
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IAPManager
+  - hash:
+      serializedVersion: 2
+      Hash: 7ea0802ea8f31fa4c84fe1ab1698f05a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PurchaseButton
   platform: 13
   scenePathNames:
   - Assets/Scenes/SplashScreen.unity
   - Assets/Scenes/Game.unity
-  playerPath: D:/games/crowd-bomber-mania/Crowd Bomber Mania/Builds/12-5-20.aab
+  playerPath: D:/games/crowd-bomber-mania/Crowd Bomber Mania/Builds/13-5-20.aab

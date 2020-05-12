@@ -9,7 +9,8 @@ public enum NotificationType
     SpeedPowerUp,
     NotEnoughCash,
     LevelUp,
-    AllMonstersInfected
+    AllMonstersInfected,
+    RemoveAdsActivated
 }
 
 public class NotificationManager : MonoBehaviour
@@ -66,6 +67,8 @@ public class NotificationManager : MonoBehaviour
                 return "Level Up";
             case NotificationType.AllMonstersInfected:
                 return "All Monsters Infected";
+            case NotificationType.RemoveAdsActivated:
+                return "Ads Removed Successfully";
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);
         }
@@ -86,6 +89,8 @@ public class NotificationManager : MonoBehaviour
             case NotificationType.LevelUp:
                 return levelUpImage;
             case NotificationType.AllMonstersInfected:
+                return allMonstersInfectedImage;
+            case NotificationType.RemoveAdsActivated:
                 return allMonstersInfectedImage;
             default:
                 throw new ArgumentOutOfRangeException(nameof(type), type, null);

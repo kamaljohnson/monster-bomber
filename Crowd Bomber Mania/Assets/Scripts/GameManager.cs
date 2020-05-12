@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
     {
         if (removeAdsUi.transform.GetChild(0).gameObject.activeSelf)
         {
-            removeAdsUi.GetComponent<Animator>().Play("RemoveAdsButtonSlideOut");
+            removeAdsUi.GetComponent<Animator>().Play("RemoveAdsButtonSlideOut", -1, 0);
         }
         bottomPowerUpUi.GetComponent<Animator>().Play("BottomPowerUpAnimateOut", -1, 0);
     }
