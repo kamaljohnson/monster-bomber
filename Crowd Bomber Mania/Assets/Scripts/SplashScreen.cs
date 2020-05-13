@@ -9,6 +9,11 @@ public class SplashScreen : MonoBehaviour
 
     public void Start()
     {
+        if (!PlayerPrefs.HasKey("MajorUpdateRequireCleanUp-1"))
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt("MajorUpdateRequireCleanUp-1", 1);
+        }
         StartCoroutine(LoadGameScene());
     }
 

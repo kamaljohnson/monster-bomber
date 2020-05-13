@@ -6,9 +6,9 @@ public class PersonMovementController : MonoBehaviour
 {
     public NavMeshAgent agent;
 
-    private const float AgentWalkSpeed = 1f;
-    private const float HealthyAgentRunSpeed = 2f;
-    private static float _infectedAgentRunSpeed = 3f;
+    private const float AgentWalkSpeed = 3f;
+    private const float HealthyAgentRunSpeed = 4f;
+    private static float _infectedAgentRunSpeed = 5f;
     
     public Vector2 groundDimention;
     
