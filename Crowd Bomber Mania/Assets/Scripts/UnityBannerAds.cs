@@ -24,13 +24,14 @@ public class UnityBannerAds : MonoBehaviour {
         
         if (PlayerPrefs.HasKey("RemoveAdsActivated"))
         {
-            showAds = PlayerPrefs.GetInt("RemoveAdsActivated") == 0;
+            showAds = false;
         }
         else
         {
             showAds = true;
             PlayerPrefs.SetInt("RemoveAdsActivated", 0);
         }
+
 
         if (!showAds)
         {

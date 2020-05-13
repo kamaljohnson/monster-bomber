@@ -2875,7 +2875,7 @@ MonoBehaviour:
   cannonBallCount: 1
   reloadDelay: 0.2
   angle: 60
-  speed: 5
+  speed: 45
 --- !u!95 &511570342
 Animator:
   serializedVersion: 3

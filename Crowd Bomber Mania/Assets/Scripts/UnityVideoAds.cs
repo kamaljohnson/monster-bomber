@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Advertisements;
 
 public class UnityVideoAds : MonoBehaviour, IUnityAdsListener {
@@ -17,10 +18,11 @@ public class UnityVideoAds : MonoBehaviour, IUnityAdsListener {
     
     void Awake ()
     {
-        
+        _videoAd = this;
+
         if (PlayerPrefs.HasKey("RemoveAdsActivated"))
         {
-            showAds = PlayerPrefs.GetInt("RemoveAdsActivated") == 0;
+            showAds = false;
         }
         else
         {
@@ -33,7 +35,6 @@ public class UnityVideoAds : MonoBehaviour, IUnityAdsListener {
             return;
         }
         
-        _videoAd = this;
         
         // Initialize the Ads listener and service:
         Advertisement.AddListener (this);
@@ -46,8 +47,11 @@ public class UnityVideoAds : MonoBehaviour, IUnityAdsListener {
     {
         if (!_videoAd.showAds)
         {
+            Debug.Log("show ads false");
             return;
         }
+        Debug.Log("show ads true");
+
         GameManager.CanPlay = false;
         Advertisement.Show (_videoAd.placementId);
     }

@@ -36,7 +36,7 @@ public class Cannon : MonoBehaviour
     
     private void Start()
     {
-        Physics.gravity = Physics.gravity * speed;
+        Physics.gravity =  Vector3.down * speed;
         
         _cannon = this;
         _touched = false;
