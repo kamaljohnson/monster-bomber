@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 431}
   m_MaxSize: {x: 10000, y: 10000}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 242}
   m_MaxSize: {x: 16006, y: 8042}
   vertical: 1
-  controlID: 1742
+  controlID: 21
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 242}
   m_MaxSize: {x: 16006, y: 8042}
   vertical: 0
-  controlID: 1743
+  controlID: 22
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 242}
   m_MaxSize: {x: 8004, y: 8042}
   vertical: 1
-  controlID: 1811
+  controlID: 71
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 121}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 1812
+  controlID: 72
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -455,7 +455,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 26dcfdff44dcfdffb8dcfdffbcdcfdff06dffdff26dffdffb2dffdffb6dffdff9ce0fdffbce0fdff0ce2fdff12e2fdffbce5fdffdae5fdff2ae7fdff30e7fdffd287ffff5afbfffff4ffffff843c0000ee3c0000b83d0000186a00009e6a0000
+      m_ExpandedIDs: 54fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -926,7 +926,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 141}
     m_SelectedIDs: 28450000
     m_LastClickedID: 17704
-    m_ExpandedIDs: 00000000ec430000ee430000f0430000f243000000ca9a3b
+    m_ExpandedIDs: 00000000ee430000f0430000f2430000f4430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -954,7 +954,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ec430000ee430000f0430000f243000000ca9a3b
+    m_ExpandedIDs: 00000000ee430000f0430000f2430000f4430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
