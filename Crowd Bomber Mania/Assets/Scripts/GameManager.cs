@@ -26,8 +26,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject transitionUi;
     public GameObject gameWonUi;
-    public GameObject removeAdsUi;
-    
+
     private static int _adCounter;
     
     private static bool _notifiedAllMonstersEffected;
@@ -148,10 +147,7 @@ public class GameManager : MonoBehaviour
 
     private void HideMenu()
     {
-        if (removeAdsUi.transform.GetChild(0).gameObject.activeSelf)
-        {
-            removeAdsUi.GetComponent<Animator>().Play("RemoveAdsButtonSlideOut", -1, 0);
-        }
+
         bottomPowerUpUi.GetComponent<Animator>().Play("BottomPowerUpAnimateOut", -1, 0);
     }
 
@@ -182,5 +178,10 @@ public class GameManager : MonoBehaviour
         PowerUp.Reset();
 
         _notifiedAllMonstersEffected = false;
+    }
+
+    public void GoToPlayStore()
+    {
+        Application.OpenURL("https://bit.ly/3b2wulB");
     }
 }
